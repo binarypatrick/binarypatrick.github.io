@@ -64,3 +64,5 @@ docker compose version
 ```bash
 sudo usermod -aG docker $USER
 ```
+
+You'll need to logout and log back in for the change to take effect
