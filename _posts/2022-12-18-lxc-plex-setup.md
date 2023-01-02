@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Setting up Plex'
+title: 'LXC: Setting up Plex'
 date: 2022-12-18 23:00:00 -0500
 category: 'Service Setup'
 tags: ['plex']
