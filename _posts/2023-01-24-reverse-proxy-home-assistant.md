@@ -23,4 +23,6 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 192.168.1.10    #traefik
-```s
+```
+
+For more information, check out the documentation [here](https://www.home-assistant.io/integrations/http/#reverse-proxies)
