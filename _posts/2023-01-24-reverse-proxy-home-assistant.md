@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Configuring Home Assistant for Reverse Proxy'
-date: 2023-1-24 12:00:00 -0500
+date: 2023-1-23 12:00:00 -0500
 category: 'Service Setup'
 tags: ['home assistant', 'traefik']
 ---
