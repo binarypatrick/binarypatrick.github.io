@@ -167,54 +167,28 @@ cname=pihole.ha.local,pihole.local
 
 ## Syncronizing Local DNS
 
-Now, a critical part of this is that the configuration you set up on your primary node is distributed to the other nodes, so that in the event of a failover your DNS local records still resolve. If you don't use local DNS, or want to keep things syncronized manually, you can skip this next bit. If not though, I'll show you how to syncronize these files using `rsync`.
+Now, a critical part of this is that the configuration you set up on your primary node is distributed to the other nodes, so that in the event of a failover your DNS local records still resolve. If you don't use local DNS, or want to keep things syncronized manually, you can skip this bit. If not though, I'll show you how to syncronize these files using [Gravity Sync](https://github.com/vmstan/gravity-sync).
 
-Also, keep in mind there is a premade service out there called [Gravity Sync](https://github.com/vmstan/gravity-sync). There are lots of guides on how to use it, but for simply syncronizing these two files, I prefer to use rsync.
+In the past I tried to keep instances syncronized with rsync, but that proved to be too fragile over time. Gravity sync does a very robust job and just works.
 
-### SSH Keys
-
-To get started we will need to set up SSH keys for rsync to use on the primary node. You will need to make sure you generate them as the user that will be running rsync. You will also need to create an `.ssh` folder for the keys to go into.
+To install, follow the installation guide in the repo, but to overview you will need to run the curl command.
 
 ```bash
-mkdir ~/.ssh/
-ssh-keygen -t rsa -b 4096
+curl -sSL https://raw.githubusercontent.com/vmstan/gs-install/main/gs-install.sh | bash
 ```
 
-I use the default file location/name and do not set a passphrase. When you are done, you should see two files.
+The install script will prompt you for the remote machine. For my usage, my auxiallary instances pull their configuration from the primary instance. Once a connection is made, run the pull command.
 
 ```bash
-ls ~/.ssh
-# id_rsa  id_rsa.pub
+gravity-sync pull
 ```
 
-Now all you need to do is to export the key to the backup nodes. This can be done with `ssh-copy-id`
+Then you can configure it to run automatically by running the automate command.
 
 ```bash
-ssh-copy-id -i ~/.ssh/id_rsa <username>@<host>
+gravity-sync auto
 ```
 
-More about ssh-keygen and ssh-copy-id can be found [here](https://www.ssh.com/academy/ssh/keygen) and [here](https://www.ssh.com/academy/ssh/copy-id). Now you can confirm ssh works without a password. 
-
-```bash
-ssh <username>@<host>
-```
-
-### rsync
-
-Now for the last step, add an rsync file to `cron.d` and add the rsync commands.
-
-```bash
-sudo nano /etc/cron.d/rsync
-```
-
-```
-* * * * * <primary-node-username> rsync /etc/pihole/custom.list <username>@<host>:/etc/pihole/custom.list
-* * * * * <primary-node-username> rsync /etc/dnsmasq.d/05-pihole-custom-cname.conf <username>@<host>:/etc/dnsmasq.d/05-pihole-custom-cname.conf
-```
-
-To break this down, `* * * * *` will ensure the command runs every minute. This can be adjusted to your liking. `<primary-node-username>` is the name of the user on the primary node that rsync will run under. This should be the same user that created and copied the keys to the other nodes. `<username>` and `<host>` should be the user and host you configured for SSH in the last step.
-
-> You should manually run the rsync commands in terminal to save the host thumbprint, and ensure the command works
-{: .prompt-tip }
+Auto will follow use the last successful connection made, pull or push.
 
 Congratulations, you should now have a high availabilty Pi-hole cluster!
