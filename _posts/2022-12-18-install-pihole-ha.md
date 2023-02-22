@@ -52,20 +52,17 @@ I also like to turn on DNSSEC in <u>Settings</u> > <u>DNS</u> > <u>Advanced DNS 
 
 ![systemctl status keepalived](/assets/img/install-pihole-ha-3.png)
 
-The last change that I make is to add the hostname I will use for this instance to an authorized hosts array in the web interface php file. I do this so that when I try and access my instance from the friendly name I have set up in DNS or a reverse proxy, I don't have to remember the /admin suffix. To do this, you will need to edit the index.php file of Pi-hole.
+### Redirect to Admin
+
+The last change that I make is to redirect HTTP requests to the root path to the pihole `/admin` path. I find it annoying this isn't done by default but it's an easy fix. Simply add the following line to the `lighttpd.conf` file.
 
 ```bash
-sudo nano /var/www/html/pihole/index.php
+sudo nano /etc/lighttpd/lighttpd.conf
 ```
 
-In this file I edit the authorizedHosts array
-
-```php
-$authorizedHosts = [ "localhost", "pihole.local" ];
+```conf
+url.redirect = ("^/$" => "/admin" )
 ```
-
-> index.php is likely overwritten whenever Pi-hole is updated and these changes will need to be reapplied
-{: .prompt-warning }
 
 ## High Availability with keepalived
 
