@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setting up Uctronics OLED display with a startup service"
+title: "Autostarting Uctronics Raspberry Pi OLED Display"
 date: 2023-02-26 12:00:00 -0500
 category: "Service Setup"
 tags: ['raspberry pi', 'uctronics']
