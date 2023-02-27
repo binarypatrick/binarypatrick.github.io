@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reaching Quorum with an External QDevice"
+title: "Reaching Quorum in Proxmox with an External QDevice"
 date: 2023-02-27 00:00:00 -0500
 category: "Service Setup"
 tags: ['proxmox', 'qdevice', 'corosync']
