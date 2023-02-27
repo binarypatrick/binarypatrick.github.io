@@ -56,7 +56,6 @@ Now check to make sure v2 is installed
 
 ```bash
 docker compose version
-# Docker Compose version 2.14.2
 ```
 
 ## Run Docker from a non-root user without sudo
