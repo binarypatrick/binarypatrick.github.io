@@ -33,7 +33,7 @@ passwd patrick
 
 `nano /etc/bash.bashrc`
 
-Add the following lines to add color to bash:
+Add the following lines to [add color to bash](https://wiki.debian.org/BashColors):
 
 ```conf
 export LS_OPTIONS='--color=auto'
