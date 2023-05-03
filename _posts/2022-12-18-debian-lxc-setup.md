@@ -77,7 +77,7 @@ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 Uncomment the following line
 
 ```
-"origin=Debian,codename=${distro_codename}-updates";
+"origin=*";
 
 <--->
 
