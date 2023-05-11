@@ -31,7 +31,9 @@ passwd patrick
 ```
 ## Make the CLI more fun
 
-`nano /etc/bash.bashrc`
+```bash
+nano /etc/bash.bashrc
+```
 
 Add the following lines to [add color to bash](https://wiki.debian.org/BashColors):
 
