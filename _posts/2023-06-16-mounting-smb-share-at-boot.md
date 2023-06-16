@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mounting a remote share using fstab"
+title: "Mounting a SMB Share at Boot"
 date: 2023-06-16 00:00:00 -0500
 category: "Service Setup"
 tags: ['linux', 'fstab', 'smb']
