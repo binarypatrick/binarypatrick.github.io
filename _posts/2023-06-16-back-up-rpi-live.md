@@ -39,6 +39,7 @@ Once you have the files, you'll need to move them to the user binary directory.
 ```bash
 sudo cp image-* /usr/local/sbin/
 sudo chmod 755 /usr/local/sbin/image-*
+ls -lah /usr/local/sbin/image-*
 ```
 
 ## Running the Backup
