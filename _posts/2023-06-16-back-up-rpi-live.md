@@ -53,3 +53,9 @@ sudo image-backup --initial /mnt/backup/$(date +"%Y-%m-%d").img,,5000
 The backup run time will depend on your device and how much data it needs to copy. It is surprisingly fast though. 15GB ususually runs for 2+ minutes on a Raspberry Pi 4B.
 
 > Backup can be pretty large, ~15GB depending on how much you have running on your Pi
+
+Once you have a completed backup, you can run an incremental backup by running the following
+
+```bash
+image-backup <image_name.img>
+```
