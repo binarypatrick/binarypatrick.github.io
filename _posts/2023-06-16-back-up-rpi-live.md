@@ -65,6 +65,7 @@ image-backup <image_name.img>
 If you'd like to automate your backup, you can pretty easily using crontab. First create the script you'd like to run. I like to put it in `/root/.local/bin`.
 
 ```bash
+sudo mkdir /root/.local/bin
 sudo nano /root/.local/bin/backup
 ```
 
