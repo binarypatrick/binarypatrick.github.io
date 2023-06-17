@@ -82,4 +82,4 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 0 6 * * * /bin/bash /root/.local/bin/backup > /var/log/backup.log 2>&1
 ```
 
-Notice this will run the backup script every morning at 6am and log out to `/var/log/backup.log`
+Notice this will run the backup script every morning at 6am and log the results to `/var/log/backup.log`
