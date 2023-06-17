@@ -6,7 +6,16 @@ category: "Service Setup"
 tags: ['linux', 'fstab', 'smb']
 ---
 
-Very frequently I need to mount SMB2 or SMB3 shares inside of my linux devices. To do so I usually use `fstab`.
+Very frequently I need to mount SMB2 or SMB3 shares inside of my linux devices. To do so I usually use `fstab`. 
+
+## Depenedencies
+
+You will need to install Samba and CIFS utilities
+
+```bash
+sudo apt update
+sudo apt install samba smbclient cifs-utils -y
+```
 
 ## `fstab`
 

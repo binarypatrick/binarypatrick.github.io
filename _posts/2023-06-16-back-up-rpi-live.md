@@ -44,7 +44,7 @@ ls -lah /usr/local/sbin/image-*
 
 ## Running the Backup
 
-Now you should be able to use `image-backup`. I typically run the following command, and even add it to crontab.
+Now you should be able to use `image-backup`.
 
 ```bash
 sudo image-backup --initial /mnt/backup/$(date +"%Y-%m-%d").img,,5000
@@ -54,8 +54,32 @@ The backup run time will depend on your device and how much data it needs to cop
 
 > Backup can be pretty large, ~15GB depending on how much you have running on your Pi
 
-Once you have a completed backup, you can run an incremental backup by running the following
+Once you have a completed backup, you can run an incremental backup by running `image-backup` and providing an exisiting backup to update.
 
 ```bash
 image-backup <image_name.img>
 ```
+
+## Crontab
+
+If you'd like to automate your backup, you can pretty easily using crontab. First create the script you'd like to run. I like to put it in `/root/.local/bin`.
+
+```bash
+sudo nano /root/.local/bin/backup
+```
+
+```bash
+#!/bin/bash
+
+# Backup RPI
+image-backup --initial /mnt/backup/rpi1_$(date +%Y-%m-%d).img,,5000
+```
+
+Then you'll have to add the following to crontab. Because we put our image-util files in `/usr/local/sbin` we'll have to define that in the crontab path.
+
+```bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+0 6 * * * /bin/bash /root/.local/bin/backup > /var/log/backup.log 2>&1
+```
+
+Notice this will run the backup script every morning at 6am and log out to `/var/log/backup.log`
