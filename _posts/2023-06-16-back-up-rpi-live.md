@@ -76,7 +76,11 @@ sudo nano /root/.local/bin/backup
 image-backup --initial /mnt/backup/rpi1_$(date +%Y-%m-%d).img,,5000
 ```
 
-Then you'll have to add the following to crontab. Because we put our image-util files in `/usr/local/sbin` we'll have to define that in the crontab path.
+Then you'll have to add the following to the root crontab as we want the root user to run the backup. Because we put our image-util files in `/usr/local/sbin` we'll have to define that in the crontab path.
+
+```bash
+sudo crontab -e
+```
 
 ```bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
