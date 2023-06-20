@@ -6,7 +6,7 @@ category: 'Service Setup'
 tags: ['pihole', 'setup', 'high availablity', 'dns', 'spam']
 ---
 
-This is a step by step guide to set up Pi-hole in a high availabilty environment. Previously I was using a lone Raspberry Pi 3B to run Pi-hole. The issue with this setup was, if that pi went down, DNS was down on my network, which is definitely unacceptable. So let make it better!
+This is a step by step guide to set up Pi-hole in a high availability environment. Previously I was using a lone Raspberry Pi 3B to run Pi-hole. The issue with this setup was, if that pi went down, DNS was down on my network, which is definitely unacceptable. So let make it better!
 
 <!--more-->
 
@@ -66,7 +66,7 @@ url.redirect = ("^/$" => "/admin" )
 
 ## High Availability with keepalived
 
-To have a high availabilty cluster, you will need more than one Pi-hole instance running. Once you have them both running, you can configure `keepalived` to set up a virtual IP between them using a technology called VRRP. It allows both servers to share a virtual IP between them, swapping instantly when one of them goes down. Because this is more of a "hot spare" methodology, one node will be primary, and the rest will be secondary. To get started you will need to install two pacakges.
+To have a high availability cluster, you will need more than one Pi-hole instance running. Once you have them both running, you can configure `keepalived` to set up a virtual IP between them using a technology called VRRP. It allows both servers to share a virtual IP between them, swapping instantly when one of them goes down. Because this is more of a "hot spare" methodology, one node will be primary, and the rest will be secondary. To get started you will need to install two packages.
 
 ```bash
 sudo apt install keepalived libipset13 -y
@@ -107,7 +107,7 @@ vrrp_instance pihole {
 | Line | Description |
 |---|---|
 | 1 | The first thing to configure is the instance name. I have it set to `pihole`. |
-| 2 | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluser with a higher priorty, it will always become the master node. |
+| 2 | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluster with a higher priority, it will always become the master node. |
 | 3 | The name of the interface that the virtual IP will be bound. Can be found using `ip a`. |
 | 5 | The priority will configure which node is the Master. The master node will always be the node with the highest priority |
 | 6 | The advertisement timespan in seconds. |
@@ -119,7 +119,7 @@ vrrp_instance pihole {
 > Never set an IP reservation for the virtual IP, or set it as a static address for another device
 {: .prompt-warning }
 
-Also keep in mind, this is set up for unicast, but can be configured for multicast. I just like to be explict. You can find more details about [keepalived configuration here](https://keepalived.readthedocs.io/en/latest/configuration_synopsis.html).
+Also keep in mind, this is set up for unicast, but can be configured for multicast. I just like to be explicit. You can find more details about [keepalived configuration here](https://keepalived.readthedocs.io/en/latest/configuration_synopsis.html).
 
 Once it's configured, restart the service
 
@@ -167,9 +167,9 @@ cname=pihole.ha.local,pihole.local
 
 ## Syncronizing Local DNS
 
-Now, a critical part of this is that the configuration you set up on your primary node is distributed to the other nodes, so that in the event of a failover your DNS local records still resolve. If you don't use local DNS, or want to keep things syncronized manually, you can skip this bit. If not though, I'll show you how to syncronize these files using [Gravity Sync](https://github.com/vmstan/gravity-sync).
+Now, a critical part of this is that the configuration you set up on your primary node is distributed to the other nodes, so that in the event of a failover your DNS local records still resolve. If you don't use local DNS, or want to keep things synchronized manually, you can skip this bit. If not though, I'll show you how to synchronize these files using [Gravity Sync](https://github.com/vmstan/gravity-sync).
 
-In the past I tried to keep instances syncronized with rsync, but that proved to be too fragile over time. Gravity sync does a very robust job and just works.
+In the past I tried to keep instances synchronized with rsync, but that proved to be too fragile over time. Gravity sync does a very robust job and just works.
 
 To install, follow the installation guide in the repo, but to overview you will need to run the curl command.
 
@@ -177,7 +177,7 @@ To install, follow the installation guide in the repo, but to overview you will 
 curl -sSL https://raw.githubusercontent.com/vmstan/gs-install/main/gs-install.sh | bash
 ```
 
-The install script will prompt you for the remote machine. For my usage, my auxiallary instances pull their configuration from the primary instance. Once a connection is made, run the pull command.
+The install script will prompt you for the remote machine. For my usage, my auxillary instances pull their configuration from the primary instance. Once a connection is made, run the pull command.
 
 ```bash
 gravity-sync pull
@@ -191,4 +191,4 @@ gravity-sync auto
 
 Auto will follow use the last successful connection made, pull or push.
 
-Congratulations, you should now have a high availabilty Pi-hole cluster!
+Congratulations, you should now have a high availability Pi-hole cluster!

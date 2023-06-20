@@ -12,7 +12,7 @@ After setting up a new server, I wanted to migrate my plex install to the more p
 
 ## Provisioning
 
-Previously I was running plex as a container in unraid. Then as a container on another VM. Both were somewhat problematic for me because plex is a hog and takes up all the resources of the VM during transcoding. So I wanted to try and install it in a LXC environment instead. To start, I provitioned the environment with 2 CPU cores, 3 GB of RAM, 16 GB of disk space, and a static IP. While this seemed like enough at first, I doubled the CPU coure count to 4 as it was running steadily at 98% utilization with only 2. I also had to convert the environment to a privledged container to get CIFS automount to work correctly.
+Previously I was running plex as a container in Unraid. Then as a container on another VM. Both were somewhat problematic for me because plex is a hog and takes up all the resources of the VM during transcoding. So I wanted to try and install it in a LXC environment instead. To start, I provisioned the environment with 2 CPU cores, 3 GB of RAM, 16 GB of disk space, and a static IP. While this seemed like enough at first, I doubled the CPU core count to 4 as it was running steadily at 98% utilization with only 2. I also had to convert the environment to a privileged container to get CIFS automount to work correctly.
 
 Final provisioned LXC environment is as follows:
 
@@ -24,7 +24,7 @@ Final provisioned LXC environment is as follows:
 
 ## Mounting Media from Network Share
 
-Mounting my media share from a storage device was easy enough, once I realized I had to make the container privledged. I configured `fstab` to automount the share when the environment started, and used a credential file stored in /root for security.
+Mounting my media share from a storage device was easy enough, once I realized I had to make the container privileged. I configured `fstab` to automount the share when the environment started, and used a credential file stored in /root for security.
 
 > Privileged Container must be set to true to mount a network share
 {: .prompt-tip }
@@ -48,7 +48,7 @@ sudo nano /etc/fstab
 ```
 
 ```
-//192.168.1.10/media /mnt/media cifs uid=0,credentials=/root/.cifscreds,iocharset=utf8,vers=3.0,noperm 0 0
+//192.168.1.10/media /mnt/media cifs vers=3.0,credentials=/root/.cifscreds,uid=1000,gid=1000 0 0
 ```
 
 Once you've added the configuration save the file and run
@@ -57,7 +57,7 @@ Once you've added the configuration save the file and run
 sudo mount -a
 ```
 
-You should now see your media mounted under /mnt/media. Restart the environment to make sure it is remounter after a reboot.
+You should now see your media mounted under /mnt/media. Restart the environment to make sure it is remounted after a reboot.
 
 ## Creating /transcode
 
@@ -71,7 +71,7 @@ sudo nano /etc/fstab
 ```
 
 ```
-tmpfs  /mnt/transcode  tmpfs  rw,size=2G  0   0
+tmpfs /mnt/transcode tmpfs rw,size=2G 0 0
 ```
 
 I set the size to 2 GB, but this can be configured to whatever you like. During heavy transcoding, or when Plex is handling multiple streams, this will certainly fill up. Plex will recycle memory as needed based on memory pressure and available space.
@@ -106,7 +106,7 @@ Once Plex finishes installing, you can access it from the static IP configured a
 
 ## Migrating Configuration
 
-As I mentioned in the beginning, I am migrating from an existing plex environment, and thus I want to move my cache to the new environment rather than recreate it. The benefit of this is that I won't lose all of my custom metadata, nor collections and other settings. To make this move, you will need to find your Library folders and copy the content to the new environment. I used rsync to do this but, you can use winscp or any other method you like. I found my Library files in the config folder I mounted for the container I was using. Installing Plex in the LXC node, I found it in `/var/lib/plexmediaserver/`
+As I mentioned in the beginning, I am migrating from an existing plex environment, and thus I want to move my cache to the new environment rather than recreate it. The benefit of this is that I won't lose all of my custom metadata, nor collections and other settings. To make this move, you will need to find your Library folders and copy the content to the new environment. I used rsync to do this but, you can use WinSCP or any other method you like. I found my Library files in the config folder I mounted for the container I was using. Installing Plex in the LXC node, I found it in `/var/lib/plexmediaserver/`
 
 I would recommend stopping Plex as a service before you migrate the files.
 
