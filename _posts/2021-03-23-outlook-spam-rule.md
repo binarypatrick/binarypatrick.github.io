@@ -28,10 +28,10 @@ From here click `Add new rule`. A create rule screen will appear and you can sta
 
 ![Rules](/assets/img/outlook-spam-rules.png)
 
-Add the action to `Move to` the `Junk Email` folder, and for an added nicety, Add anohter action to set `Mark as read` too.
+Add the action to `Move to` the `Junk Email` folder, and for an added nicety, Add another action to set `Mark as read` too.
 
 Lastly, and most importantly, set the exception. The rules here can be tailored to meet your needs, but for me, `Sender address includes` and then my {@organization.com} did the trick.
 
 ## Finally
 
-Now my inbox is much leaner. Occasionally I will check the junk folder just to see if I miseed anything, but so far I haven't.
+Now my inbox is much leaner. Occasionally I will check the junk folder just to see if I missed anything, but so far I haven't.

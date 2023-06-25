@@ -8,7 +8,7 @@ tags: ['linux', 'fstab', 'smb']
 
 Very frequently I need to mount SMB2 or SMB3 shares inside of my linux devices. To do so I usually use `fstab`. 
 
-## Depenedencies
+## Dependencies
 
 You will need to install Samba and CIFS utilities
 

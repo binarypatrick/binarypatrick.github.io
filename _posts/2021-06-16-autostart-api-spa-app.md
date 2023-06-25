@@ -34,7 +34,7 @@ it's also important to declare the script you want node to run in scripts sectio
 
 ## Humble beginnings
 
-For my first attempt at makin my start script, I created a batch file that started two scripts. One new Powershell window for `dotnet watch run` and another for `npm run start`. This had some hiccups initially. The windows would close if the Powershell stopped running, which was problematic for collecting errors. Also the command prompt window would linger. After a few iterations, I was able to solve those problems and landed on this:
+For my first attempt at making my start script, I created a batch file that started two scripts. One new Powershell window for `dotnet watch run` and another for `npm run start`. This had some hiccups initially. The windows would close if the Powershell stopped running, which was problematic for collecting errors. Also the command prompt window would linger. After a few iterations, I was able to solve those problems and landed on this:
 
 ```batch
 cd ./src/api
