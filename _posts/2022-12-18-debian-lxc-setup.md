@@ -71,7 +71,7 @@ PermitEmptyPasswords no
 To allow a user to execute `sudo` commands without being prompted for a password, create the following file.
 
 ```bash
-/etc/sudoers.d/patrick
+nano /etc/sudoers.d/patrick
 ```
 
 ```conf
