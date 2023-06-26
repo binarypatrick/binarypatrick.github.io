@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Show IP on TTY Login Prompt"
-date: 2023-06-16 00:00:00 -0500
+date: 2023-06-25 00:00:00 -0500
 category: "Service Setup"
 tags: ['linux', 'debian', 'headless']
 ---
