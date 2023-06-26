@@ -66,3 +66,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 OUTNAME=$(basename $1 .enc).json
 openssl enc -aes-256-cbc -pbkdf2 -iter 1000000 -d -nopad -in $1 -out $OUTNAME
 ```
+
+## Resources
+- https://www.digitalocean.com/community/tutorials/send-email-linux-command-line
+- https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/
