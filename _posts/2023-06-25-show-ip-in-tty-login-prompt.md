@@ -10,9 +10,9 @@ When I first log into a linux instance I've set up, I often look to find the eth
 
 ## Considerations
 
-Firstly, if security is your only concern, don't do this. It will make it easier for someone with physical access to know details about this machine without doing any work to get them. In my opinion, physical access is access and therefore if someone can see the TTY login, I likely have more to worry about. Secondly, this unfortunately requires at least one login to set up. So if you're looking to SSH without ever logging in, you'll still need to figure out the IP at least initally.
+Firstly, if security is your only concern, don't do this. It will make it easier for someone with physical access to know details about this machine without doing any work to get them. In my opinion, physical access is access and therefore if someone can see the TTY login, I likely have more to worry about. Secondly, this unfortunately requires at least one login to set up. So if you're looking to SSH without ever logging in, you'll still need to figure out the IP at least initially.
 
-Something else to note is sometimes it take a second for the system to establish an IP if it's using DHCP. This can mean a blank field initally that is populated when the IP is finally set.
+Something else to note is sometimes it take a second for the system to establish an IP if it's using DHCP. This can mean a blank field initially that is populated when the IP is finally set.
 
 ## Changes
 

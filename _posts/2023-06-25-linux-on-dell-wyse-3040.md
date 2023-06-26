@@ -18,7 +18,7 @@ This is pretty easy to do. In the BIOS, navigate to _Maintenance > Data Wipe_ an
 
 ## Installing Debian
 
-Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actualy GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used Ventoy, but you however you choose get it on a USB stick and in the device.
+Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actually GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used Ventoy, but you however you choose get it on a USB stick and in the device.
 
 ![Debian 12 Install (Non-GUI)](/assets/img/linux-on-dell-wyse-3040/debian-12-install.png)
 
@@ -61,7 +61,7 @@ sudo journalctl -p 3 -xb
 
 ## Reboot Error
 
-I had an issue where my Wyse 3040 hung on shutodwn and reboot. It would shutdown to a black screen and then never finish. This is apparently related to a [Intel Atom Cherry Trail CPU issue](https://github.com/up-board/up-community/wiki/Ubuntu_20.04#hang-on-shutdown-or-reboot-for-up-board). An easy fix is to add a file to `modprobe.d`.
+I had an issue where my Wyse 3040 hung on shutdown and reboot. It would shutdown to a black screen and then never finish. This is apparently related to a [Intel Atom Cherry Trail CPU issue](https://github.com/up-board/up-community/wiki/Ubuntu_20.04#hang-on-shutdown-or-reboot-for-up-board). An easy fix is to add a file to `modprobe.d`.
 
 ```bash
 sudo nano /etc/modprobe.d/blacklist.conf
