@@ -18,7 +18,7 @@ This is pretty easy to do. In the BIOS, navigate to _Maintenance > Data Wipe_ an
 
 ## Installing Debian
 
-Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actually GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used Ventoy, but you however you choose get it on a USB stick and in the device.
+Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actually GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used [Ventoy](https://www.ventoy.net/en/download.html), but you however you choose get it on a USB stick and in the device.
 
 > Debian 12 is a good pick with only 16 GB eMMC and 2 GB RAM
 {: .prompt-tip }
