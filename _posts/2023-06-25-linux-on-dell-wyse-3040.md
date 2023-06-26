@@ -27,7 +27,7 @@ Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is 
 
 I leave the root password empty. This will assign the initial user account to the sudo group. If root is needed later, you can assign a password using `sudo passwd root`. I wanted to keep the install as minimal as possible, so I only select `SSH Server` and `standard system utilities`.
 
-![Minimal Install](../assets/img/linux-on-dell-wyse-3040/minimal-install.png)
+![Minimal Install](/assets/img/linux-on-dell-wyse-3040/minimal-install.png)
 
 ## Boot Issues
 
