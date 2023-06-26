@@ -66,7 +66,20 @@ PasswordAuthentication no
 PermitEmptyPasswords no
 ```
 
-Once you've made the changes, you can restart the LXC and use SSH with your new user.
+## Use `sudo` without prompt
+
+To allow a user to execute `sudo` commands without being prompted for a password, create the following file.
+
+```bash
+/etc/sudoers.d/patrick
+```
+
+```conf
+patrick ALL=(ALL) NOPASSWD: ALL
+```
+
+> Once you've made the changes, you can restart the LXC and use SSH with your new user
+{: .prompt-tip }
 
 ## Unattended Upgrades Configuration
 
