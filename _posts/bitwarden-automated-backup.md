@@ -70,3 +70,5 @@ openssl enc -aes-256-cbc -pbkdf2 -iter 1000000 -d -nopad -in $1 -out $OUTNAME
 ## Resources
 - https://www.digitalocean.com/community/tutorials/send-email-linux-command-line
 - https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/
+- https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/
+- https://bitwarden.com/help/cli-auth-challenges/
