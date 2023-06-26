@@ -20,6 +20,9 @@ This is pretty easy to do. In the BIOS, navigate to _Maintenance > Data Wipe_ an
 
 Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actually GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used Ventoy, but you however you choose get it on a USB stick and in the device.
 
+> Debian 12 is a good pick with only 16 GB eMMC and 2 GB RAM
+{: .prompt-tip }
+
 ![Debian 12 Install (Non-GUI)](/assets/img/linux-on-dell-wyse-3040/debian-12-install.png)
 
 I leave the root password empty. This will assign the initial user account to the sudo group. If root is needed later, you can assign a password using `sudo passwd root`. I wanted to keep the install as minimal as possible, so I only select `SSH Server` and `standard system utilities`.
