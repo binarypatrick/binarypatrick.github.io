@@ -6,7 +6,9 @@ category: "Service Setup"
 tags: ['linux', 'bitwarden', 'backup']
 ---
 
-## Purpose
+![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bitwarden-og-alt.png)
+
+## Introduction
 
 The purpose of this backup process arose from a moment when I broke my phone. My phone was my lone source of MFA/2FA codes via the authenticator app, and I genuinely felt terror that I would be locked out of my Bitwarden account. After getting the phone working enough to log in and transfer my 2FA seed to another device, I decided to create this script to have a backup of my passwords locally.
 
