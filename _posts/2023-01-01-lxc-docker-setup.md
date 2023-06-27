@@ -14,7 +14,7 @@ A quick guide to getting docker running on a Debian CT
 
 First make sure your container is running in privileged mode and nested is enabled in Options > Features
 
-![features](/assets/img/lxc-docker-setup-1.png)
+![Unprivileged Container](/assets/img/lxc-docker-setup/unprivileged-container.png)
 
 ## Installing Docker
 

@@ -26,7 +26,7 @@ For me, the easiest way to pull up email rules is to click on the settings icon 
 
 From here click `Add new rule`. A create rule screen will appear and you can start setting up the rule. I named my rule "Not from {organization} is Junk". Under condition choose `Apply to all messages`. This may seem wrong at first, but it will make more sense in a second.
 
-![Rules](/assets/img/outlook-spam-rules.png)
+![Rules](/assets/img/outlook-spam-rules/rules.png)
 
 Add the action to `Move to` the `Junk Email` folder, and for an added nicety, Add another action to set `Mark as read` too.
 

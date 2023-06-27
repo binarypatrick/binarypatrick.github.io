@@ -7,7 +7,9 @@ tags: ["linux", "bitwarden", "backup"]
 description: A detailed backup process for Bitwarden enabling local, encrypted vault backups. The process uses the Bitwarden CLI and runs locally on a linux instance.
 ---
 
-## Purpose
+![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bitwarden-logo.png)
+
+## Introduction
 
 The purpose of this backup process arose from a moment when I broke my phone. My phone was my lone source of MFA/2FA codes via the authenticator app, and I genuinely felt terror that I would be locked out of my Bitwarden account. After getting the phone working enough to log in and transfer my 2FA seed to another device, I decided to create this script to have a backup of my passwords locally.
 
@@ -28,6 +30,8 @@ sudo apt install unzip cron -y
 ```
 
 ## Installing the Bitwarden CLI
+
+![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bw-cli.png)
 
 Unfortunately it does not exist in the distro repo or flatpak. Though it is in snap, if you are interested in such things. I installed it manually through a handy script I wrote. It will make updating it manually later a bit easier it at least. Either way the CLI binary will need to be somewhere we can run it.
 
