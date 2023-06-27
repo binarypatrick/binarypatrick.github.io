@@ -8,6 +8,16 @@ tags: ['linux', 'bitwarden', 'backup']
 
 ## Purpose
 
+The purpose of this backup process arose from a moment when I broke my phone. My phone was my lone source of MFA/2FA codes via the authenticator app, and I genuinely felt terror that I would be locked out of my Bitwarden account. After getting the phone working enough to log in and transfer my 2FA seed to another device, I decided to create this script to have a backup of my passwords locally.
+
+Key requirements for this script are:
+
+| Key | Reasoning |
+|---|---|
+| Secure | The script must run securely and its resulting output must also be secure
+| Testable | An untested backup is not a backup
+| Automatic | It should ideally run without human intervention, rain or shine
+
 ## Prerequisites
 
 You will need `unzip` and `cron` simply to install the Bitwarden CLI.
