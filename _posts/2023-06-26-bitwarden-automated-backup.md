@@ -6,7 +6,7 @@ category: "Service Setup"
 tags: ['linux', 'bitwarden', 'backup']
 ---
 
-![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bitwarden-og-alt.png)
+![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bitwarden-logo.png)
 
 ## Introduction
 
@@ -29,6 +29,8 @@ sudo apt install unzip cron -y
 ```
 
 ## Installing the Bitwarden CLI
+
+![Bitwarden Logo](/assets/img/bitwarden-automated-backup/bw-cli.png)
 
 Unfortunately it does not exist in the distro repo or flatpak. Though it is in snap, if you are interested in such things. I installed it manually through a handy script I wrote. It will make updating it manually later a bit easier it at least. Either way the CLI binary will need to be somewhere we can run it.
 
