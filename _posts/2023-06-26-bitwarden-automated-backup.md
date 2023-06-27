@@ -105,7 +105,7 @@ When you run the script, pass the filename of the file you want to decrypt and y
 ```
 
 ## Resources
-- https://www.digitalocean.com/community/tutorials/send-email-linux-command-line
-- https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/
-- https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/
-- https://bitwarden.com/help/cli-auth-challenges/
+- [https://www.digitalocean.com/community/tutorials/send-email-linux-command-line](https://www.digitalocean.com/community/tutorials/send-email-linux-command-line)
+- [https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/](https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/)
+- [https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/](https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/)
+- [https://bitwarden.com/help/cli-auth-challenges/](https://bitwarden.com/help/cli-auth-challenges/)
