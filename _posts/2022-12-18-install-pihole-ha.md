@@ -46,11 +46,11 @@ Always enable dark mode in <u>Settings</u> > <u>API / Web interface</u> > <u>Web
 
 Because my network sets DNS per client, and not just per gateway, each client will make DNS requests directly to my Pi-hole instance. This is better for logging, but means that Pi-hole needs to be behind a firewall, and must permit all origins. This can be configured in <u>Settings</u> > <u>DNS</u> > <u>Interface Settings</u>
 
-![systemctl status keepalived](/assets/img/install-pihole-ha-2.png)
+![Interface settings](/assets/img/install-pihole-ha/interface-settings.png)
 
 I also like to turn on DNSSEC in <u>Settings</u> > <u>DNS</u> > <u>Advanced DNS settings</u>. This will add a little extra assurance on DNS lookups.
 
-![systemctl status keepalived](/assets/img/install-pihole-ha-3.png)
+![advanced dns](/assets/img/install-pihole-ha/advanced-dns.png)
 
 ### Redirect to Admin
 
@@ -133,7 +133,7 @@ You can check the service with the following command also
 sudo systemctl status keepalived
 ```
 
-![systemctl status keepalived](/assets/img/install-pihole-ha-1.png)
+![systemctl status keepalived](/assets/img/install-pihole-ha/systemctl-status-keepalived.png)
 
 ## Configuring Local DNS
 

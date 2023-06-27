@@ -43,7 +43,7 @@ cd ../spa
 start powershell.exe -NoExit npm run start
 ```
 
-![Original script result](/assets/img/autostart-api-spa-app-1.png)
+![Original script result](/assets/img/autostart-api-spa-app/original-script.png)
 
 ## Next evolution
 
@@ -58,4 +58,4 @@ wt --title "dotnet watch run" -d %apiLocation% powershell -noExit "dotnet watch 
 
 With this one line, I can start a Windows Terminal with both scripts running in tabs. This allows me to keep both together and but also manage the window as one unit. The commands are similar, but the tabs are labeled, so I can quickly jump where I need to look. Also, this is far more expandable if I needed to run other startup scripts together in the future.
 
-![New script result](/assets/img/autostart-api-spa-app-2.png)
+![New script result](/assets/img/autostart-api-spa-app/new-script.png)
