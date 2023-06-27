@@ -2,8 +2,8 @@
 layout: post
 title: "Start a SPA and it's API in one click"
 date: 2021-06-16 12:00:00 -0500
-tags: ['powershell', 'windows terminal', 'angular', '.net']
-category: 'CI/CD'
+tags: ["powershell", "windows terminal", "angular", ".net"]
+category: "CI/CD"
 ---
 
 I've been using start or jump scripts for a long time to start up my API and SPA at the same time. With [project TYE](https://devblogs.microsoft.com/aspnet/introducing-project-tye/) on the horizon, I thought I would share more about my more simplistic, "poor man", implementation.

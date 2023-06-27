@@ -3,7 +3,7 @@ layout: post
 title: "Show IP on TTY Login Prompt"
 date: 2023-06-25 00:00:00 -0500
 category: "Service Setup"
-tags: ['linux', 'debian', 'headless']
+tags: ["linux", "debian", "headless"]
 ---
 
 When I first log into a linux instance I've set up, I often look to find the ethernet adapter details. To make this easier, I like to add the IP address to the TTY login screen. This is a nice thing to do for future me troubleshooting a networking problem.
@@ -36,4 +36,4 @@ eth0: \4{eth0}
 ```
 
 > Using DHCP it take a second for the system to establish an IP and you may see a blank value for the first few seconds after startup
-{: .prompt-warning }
+> {: .prompt-warning }

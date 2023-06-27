@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Hello World!'
+title: "Hello World!"
 date: 2020-07-16 -0500
-category: 'General'
-tags: 'general'
+category: "General"
+tags: "general"
 ---
 
 Finally, I have a blog set up.

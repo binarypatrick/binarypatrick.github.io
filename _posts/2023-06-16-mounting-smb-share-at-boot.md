@@ -3,10 +3,10 @@ layout: post
 title: "Mounting a SMB Share at Boot"
 date: 2023-06-16 00:00:00 -0500
 category: "Service Setup"
-tags: ['linux', 'fstab', 'smb']
+tags: ["linux", "fstab", "smb"]
 ---
 
-Very frequently I need to mount SMB2 or SMB3 shares inside of my linux devices. To do so I usually use `fstab`. 
+Very frequently I need to mount SMB2 or SMB3 shares inside of my linux devices. To do so I usually use `fstab`.
 
 ## Dependencies
 

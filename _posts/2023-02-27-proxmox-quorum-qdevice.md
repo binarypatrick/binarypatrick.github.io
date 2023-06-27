@@ -3,7 +3,7 @@ layout: post
 title: "Reaching Quorum in Proxmox with an External QDevice"
 date: 2023-02-27 00:00:00 -0500
 category: "Service Setup"
-tags: ['proxmox', 'qdevice', 'corosync']
+tags: ["proxmox", "qdevice", "corosync"]
 ---
 
 Having only two nodes in my Proxmox cluster, I wanted to add a third external device to keep quorum during reboots or other outages. To do so I added an external qdevice as a node which works as a voting only member of the cluster. The qdevice has to be debian based, so I set mine up on a raspberry pi.

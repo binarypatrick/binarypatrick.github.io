@@ -3,7 +3,7 @@ layout: post
 title: "Git Credential Caching"
 date: 2023-06-14 00:00:00 -0500
 category: "General"
-tags: ['git']
+tags: ["git"]
 ---
 
 Having a local git repo configured, I haven't yet set up ssh authentication. Instead I use HTTPS with a username and password. It can be tiresome typing in the login credentials over and over, so I typically cache the credentials with a reasonable timeout.

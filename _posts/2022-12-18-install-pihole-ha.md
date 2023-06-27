@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Pi-hole setup with High Availablity'
+title: "Pi-hole setup with High Availablity"
 date: 2022-12-18 01:00:00 -0500
-category: 'Service Setup'
-tags: ['pihole', 'setup', 'high availablity', 'dns', 'spam']
+category: "Service Setup"
+tags: ["pihole", "setup", "high availablity", "dns", "spam"]
 ---
 
 This is a step by step guide to set up Pi-hole in a high availability environment. Previously I was using a lone Raspberry Pi 3B to run Pi-hole. The issue with this setup was, if that pi went down, DNS was down on my network, which is definitely unacceptable. So let make it better!
@@ -34,7 +34,7 @@ When you run the install command, a GUI will appear. It will guide you through t
 pihole -a -p
 ```
 
-Lastly, you'll want to add your user to the pihole group so that you can edit configuration files without needing sudo. This will be useful later. 
+Lastly, you'll want to add your user to the pihole group so that you can edit configuration files without needing sudo. This will be useful later.
 
 ```bash
 sudo usermod -a -G pihole <username>
@@ -104,20 +104,18 @@ vrrp_instance pihole {
 }
 ```
 
-| Line | Description |
-|---|---|
-| 1 | The first thing to configure is the instance name. I have it set to `pihole`. |
-| 2 | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluster with a higher priority, it will always become the master node. |
-| 3 | The name of the interface that the virtual IP will be bound. Can be found using `ip a`. |
-| 5 | The priority will configure which node is the Master. The master node will always be the node with the highest priority |
-| 6 | The advertisement timespan in seconds. |
-| 7 | You will need to add the node's IP |
-| 8 | The other nodes IPs |
-
-
+| Line | Description                                                                                                                                                                                                                                                                              |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | The first thing to configure is the instance name. I have it set to `pihole`.                                                                                                                                                                                                            |
+| 2    | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluster with a higher priority, it will always become the master node. |
+| 3    | The name of the interface that the virtual IP will be bound. Can be found using `ip a`.                                                                                                                                                                                                  |
+| 5    | The priority will configure which node is the Master. The master node will always be the node with the highest priority                                                                                                                                                                  |
+| 6    | The advertisement timespan in seconds.                                                                                                                                                                                                                                                   |
+| 7    | You will need to add the node's IP                                                                                                                                                                                                                                                       |
+| 8    | The other nodes IPs                                                                                                                                                                                                                                                                      |
 
 > Never set an IP reservation for the virtual IP, or set it as a static address for another device
-{: .prompt-warning }
+> {: .prompt-warning }
 
 Also keep in mind, this is set up for unicast, but can be configured for multicast. I just like to be explicit. You can find more details about [keepalived configuration here](https://keepalived.readthedocs.io/en/latest/configuration_synopsis.html).
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'LXC: First commands on a new Debian CT'
+title: "LXC: First commands on a new Debian CT"
 date: 2022-12-18 00:00:00 -0500
-category: 'Service Setup'
-tags: ['proxmox', 'lxc', 'debian']
+category: "Service Setup"
+tags: ["proxmox", "lxc", "debian"]
 ---
 
 A list of the first commands I run on a new Debian LXC to homogenize and secure my new environment.
@@ -29,6 +29,7 @@ useradd -m -g users -G sudo patrick
 chsh -s /bin/bash patrick
 passwd patrick
 ```
+
 ## Make the CLI more fun
 
 ```bash
@@ -79,7 +80,7 @@ patrick ALL=(ALL) NOPASSWD: ALL
 ```
 
 > Once you've made the changes, you can restart the LXC and use SSH with your new user
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ## Unattended Upgrades Configuration
 

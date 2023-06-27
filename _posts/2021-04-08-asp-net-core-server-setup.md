@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'ASP.Net Core initial server setup'
+title: "ASP.Net Core initial server setup"
 date: 2021-04-08 12:00:00 -0500
 edit: 2021-04-09 12:00:00 -0500
-category: 'Hosting'
-tags: ['server', 'pipeline', 'ops', '.net']
+category: "Hosting"
+tags: ["server", "pipeline", "ops", ".net"]
 ---
 
 I wanted to document some important steps I take setting up a new server for hosting ASP.Net Core apps. These steps change over time as versions and features change, but this post will serve as a good, general guide for things to consider and remember; both for myself and anyone else who stumbles across it!

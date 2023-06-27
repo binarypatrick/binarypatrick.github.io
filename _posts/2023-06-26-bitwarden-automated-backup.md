@@ -3,7 +3,8 @@ layout: post
 title: "Bitwarden Automated Backup"
 date: 2023-06-26 12:00:00 -0400
 category: "Service Setup"
-tags: ['linux', 'bitwarden', 'backup']
+tags: ["linux", "bitwarden", "backup"]
+description: A detailed backup process for Bitwarden enabling local, encrypted vault backups. The process uses the Bitwarden CLI and runs locally on a linux instance.
 ---
 
 ## Purpose
@@ -12,11 +13,11 @@ The purpose of this backup process arose from a moment when I broke my phone. My
 
 Key requirements for this script are:
 
-| Key | Reasoning |
-|---|---|
-| Secure | The script must run securely and its resulting output must also be secure
-| Testable | An untested backup is not a backup
-| Automatic | It should ideally run without human intervention, rain or shine
+| Key       | Reasoning                                                                 |
+| --------- | ------------------------------------------------------------------------- |
+| Secure    | The script must run securely and its resulting output must also be secure |
+| Testable  | An untested backup is not a backup                                        |
+| Automatic | It should ideally run without human intervention, rain or shine           |
 
 ## Prerequisites
 
@@ -39,7 +40,7 @@ rm bw.zip
 
 ## Bitwarden User
 
-Before we begin we will need to create a new user for running the script. This user will securely store the environment variables as well. Unfortunately even though we have the API key, Bitwarden still requires your vault password. I assume this is for actually decrypting the vault. To store them securely, I put them in the service user's `~/.bash_profile`. This way only that user, and sudoers/root will have access and the job won't need to run as root. Obviously plaintext isn't ideal, but for the script to use it, it must be read somewhere. No amount of encryption would change that. Also note this machine should be isolated on your network from other services. 
+Before we begin we will need to create a new user for running the script. This user will securely store the environment variables as well. Unfortunately even though we have the API key, Bitwarden still requires your vault password. I assume this is for actually decrypting the vault. To store them securely, I put them in the service user's `~/.bash_profile`. This way only that user, and sudoers/root will have access and the job won't need to run as root. Obviously plaintext isn't ideal, but for the script to use it, it must be read somewhere. No amount of encryption would change that. Also note this machine should be isolated on your network from other services.
 
 To create your user run the following:
 
@@ -115,6 +116,7 @@ When you run the script, pass the filename of the file you want to decrypt and y
 ```
 
 ## Resources
+
 - [https://www.digitalocean.com/community/tutorials/send-email-linux-command-line](https://www.digitalocean.com/community/tutorials/send-email-linux-command-line)
 - [https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/](https://easyengine.io/tutorials/linux/ubuntu-postfix-gmail-smtp/)
 - [https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/](https://bitwarden.com/blog/how-to-back-up-and-encrypt-your-bitwarden-vault-from-the-command-line/)

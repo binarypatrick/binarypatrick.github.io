@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'LXC: Installing Docker on a Debian CT'
+title: "LXC: Installing Docker on a Debian CT"
 date: 2023-1-1 12:00:00 -0500
-category: 'Service Setup'
-tags: ['proxmox', 'lxc', 'debian', 'docker']
+category: "Service Setup"
+tags: ["proxmox", "lxc", "debian", "docker"]
 ---
 
 A quick guide to getting docker running on a Debian CT
@@ -65,8 +65,7 @@ sudo usermod -aG docker $USER
 ```
 
 > You'll need to logout and log back in for the change to take effect
-{: .prompt-warning }
-
+> {: .prompt-warning }
 
 ## Installing Lazydocker
 

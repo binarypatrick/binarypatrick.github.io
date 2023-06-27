@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'LXC: Setting up Plex'
+title: "LXC: Setting up Plex"
 date: 2022-12-18 23:00:00 -0500
-category: 'Service Setup'
-tags: ['plex']
+category: "Service Setup"
+tags: ["plex"]
 ---
 
 After setting up a new server, I wanted to migrate my plex install to the more powerful machine. This will be a jump from an i3-2100 to an i5-12500T. A substantial leap in performance.
@@ -27,7 +27,7 @@ Final provisioned LXC environment is as follows:
 Mounting my media share from a storage device was easy enough, once I realized I had to make the container privileged. I configured `fstab` to automount the share when the environment started, and used a credential file stored in /root for security.
 
 > Privileged Container must be set to true to mount a network share
-{: .prompt-tip }
+> {: .prompt-tip }
 
 Lets start with the credential file. It's a simple file that needs to live somewhere fstab can access. I used /root because `fstab` will run as root so I know it will have access.
 
