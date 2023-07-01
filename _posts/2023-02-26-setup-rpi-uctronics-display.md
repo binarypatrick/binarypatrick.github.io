@@ -53,7 +53,7 @@ sudo mv ./display /usr/bin/uctronics-display
 ```
 
 > Note that the binary is renamed to `uctronics-display` with the command
-> {: .prompt-warning }
+{: .prompt-warning }
 
 ## Autostart
 

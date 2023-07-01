@@ -65,7 +65,7 @@ sudo usermod -aG docker $USER
 ```
 
 > You'll need to logout and log back in for the change to take effect
-> {: .prompt-warning }
+{: .prompt-warning }
 
 ## Installing Lazydocker
 

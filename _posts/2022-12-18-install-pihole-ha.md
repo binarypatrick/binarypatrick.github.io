@@ -115,7 +115,7 @@ vrrp_instance pihole {
 | 8    | The other nodes IPs                                                                                                                                                                                                                                                                      |
 
 > Never set an IP reservation for the virtual IP, or set it as a static address for another device
-> {: .prompt-warning }
+{: .prompt-warning }
 
 Also keep in mind, this is set up for unicast, but can be configured for multicast. I just like to be explicit. You can find more details about [keepalived configuration here](https://keepalived.readthedocs.io/en/latest/configuration_synopsis.html).
 

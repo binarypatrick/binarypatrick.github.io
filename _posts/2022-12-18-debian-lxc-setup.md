@@ -80,7 +80,7 @@ patrick ALL=(ALL) NOPASSWD: ALL
 ```
 
 > Once you've made the changes, you can restart the LXC and use SSH with your new user
-> {: .prompt-tip }
+{: .prompt-tip }
 
 ## Unattended Upgrades Configuration
 

@@ -27,7 +27,7 @@ Final provisioned LXC environment is as follows:
 Mounting my media share from a storage device was easy enough, once I realized I had to make the container privileged. I configured `fstab` to automount the share when the environment started, and used a credential file stored in /root for security.
 
 > Privileged Container must be set to true to mount a network share
-> {: .prompt-tip }
+{: .prompt-tip }
 
 Lets start with the credential file. It's a simple file that needs to live somewhere fstab can access. I used /root because `fstab` will run as root so I know it will have access.
 

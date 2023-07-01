@@ -36,4 +36,4 @@ eth0: \4{eth0}
 ```
 
 > Using DHCP it take a second for the system to establish an IP and you may see a blank value for the first few seconds after startup
-> {: .prompt-warning }
+{: .prompt-warning }
