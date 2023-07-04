@@ -3,7 +3,7 @@ layout: post
 title: "Using Prune to Manage Archives"
 date: 2023-07-02 00:00:00 -0400
 category: "Service Setup"
-tags: ["linux", "backup"]
+tags: ["linux", "backup", "FOSS"]
 ---
 
 Often times when using a tool like rsync to make backups you end up with lots of archives, and no way to keep them managed over time without a manual process. Prune is a simple tool that lets you remove prune archives in a folder, deleting any archives not matching the specified retention options. Any file type can be an archive and prune allows you to specify which files are in scope to be pruned.
