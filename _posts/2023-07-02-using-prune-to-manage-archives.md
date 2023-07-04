@@ -6,21 +6,22 @@ category: "Service Setup"
 tags: ["linux", "backup"]
 ---
 
-Often times when using a tool like rsync to make backups you end up with lots of archives, and no way to keep them managed over time without a manual process. [Prune is a simple tool](https://github.com/BinaryPatrick/Prune) that lets you remove prune archives in a folder, deleting any archives not matching the specified retention options. Any file type can be an archive and prune allows you to specify which files are in scope to be pruned.
+Often times when using a tool like rsync to make backups you end up with lots of archives, and no way to keep them managed over time without a manual process. Prune is a simple tool that lets you remove prune archives in a folder, deleting any archives not matching the specified retention options. Any file type can be an archive and prune allows you to specify which files are in scope to be pruned.
+
+[https://github.com/BinaryPatrick/Prune](https://github.com/BinaryPatrick/Prune)
 
 ## Install
 
-To install Prune you can go to the [releases page](https://github.com/BinaryPatrick/Prune/releases) and download the latest release for your environment. If you are running Linux on x64 you can also run the following commands to download and install Prune.
+To install Prune you can go to the [releases page](https://github.com/BinaryPatrick/Prune/releases) and download the latest release for your environment. You can also just clone the repo and compile it yourself with the steps in the readme. If you are running Linux on x64 you can also run the following commands to download and install Prune.
+
+> Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
+{: .prompt-warning }
 
 ```bash
-GITHUB_LATEST_VERSION=$(curl -L -s -H 'Accept: application/json' https://github.com/binarypatrick/prune/releases/latest | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
-GITHUB_FILE="prune-linux-x64.tar.gz"
-GITHUB_URL="https://github.com/BinaryPatrick/Prune/releases/download/${GITHUB_LATEST_VERSION}/${GITHUB_FILE}"
-
-curl -L -o prune-linux-x64.tar.gz $GITHUB_URL
-tar xzvf prune-linux-x64.tar.gz ./prune
-sudo install -Dm 755 prune -t /usr/local/bin
-rm prune prune-linux-x64.tar.gz
+curl -s -o prune-install-linux-x64.sh https://raw.githubusercontent.com/BinaryPatrick/Prune/main/scripts/install-linux-x64.sh
+chmod +x prune-install-linux-x64.sh
+sudo ./prune-install-linux-x64.sh
+rm prune-install-linux-x64.sh
 ```
 
 ## Usage
