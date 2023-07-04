@@ -27,7 +27,7 @@ rm prune prune-linux-x64.tar.gz
 
 Once it's installed, you should be able to run prune simply by typing in `prune`, **but don't**. Prune is designed to delete things, and you should always run it with `--dry-run` and `--verbose` until you're certain what will be pruned.
 
-![prune help](../assets/img/using-prune-to-manage-archives/prune-help.png)
+![prune help](/assets/img/using-prune-to-manage-archives/prune-help.png)
 
 To use prune, you will need to provide a pruning path and some retention value. Keep in mind prune is not recursive, so it will only purge files directly in the path you give. Prune also uses last modified date, not created date to evaluate what files to keep and prune. This allows for incremental backups with updates to be properly evaluated. You must specify some level of retention for prune to run.
 
@@ -36,7 +36,7 @@ prune --path /home/patrick/test/ --keep-last 10 --dry-run --verbose
 ```
 Example output:
 
-![prune example output](../assets/img/using-prune-to-manage-archives/prune-example-output.png)
+![prune example output](/assets/img/using-prune-to-manage-archives/prune-example-output.png)
 
 You can also provide more file filtering using `--prefix` and `--ext`.
 
