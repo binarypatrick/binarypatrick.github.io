@@ -17,7 +17,7 @@ apt update && apt upgrade -y
 ```
 
 ```bash
-apt install curl nano openssl rsync fail2ban unattended-upgrades apt-listchanges lm-sensors sudo -y
+apt install curl nano openssl rsync fail2ban unattended-upgrades apt-listchanges lm-sensors command-not-found sudo -y
 ```
 
 ## Don't use root
