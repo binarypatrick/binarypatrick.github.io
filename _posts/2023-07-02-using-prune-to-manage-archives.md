@@ -18,10 +18,7 @@ To install Prune you can go to the [releases page](https://github.com/BinaryPatr
 {: .prompt-warning }
 
 ```bash
-curl -s -o prune-install-linux-x64.sh https://raw.githubusercontent.com/BinaryPatrick/Prune/main/scripts/install-linux-x64.sh
-chmod +x prune-install-linux-x64.sh
-sudo ./prune-install-linux-x64.sh
-rm prune-install-linux-x64.sh
+curl https://raw.githubusercontent.com/BinaryPatrick/Prune/main/scripts/install-linux-x64.sh | sudo /bin/bash
 ```
 
 ## Usage
