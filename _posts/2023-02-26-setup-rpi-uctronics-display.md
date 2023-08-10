@@ -3,7 +3,7 @@ layout: post
 title: "Autostarting Uctronics Raspberry Pi OLED Display"
 date: 2023-02-26 12:00:00 -0500
 category: "Service Setup"
-tags: ["raspberry pi", "uctronics"]
+tags: ["raspberry pi", "uctronics", "setup"]
 ---
 
 This is a quick setup for both the Uctronics display code, and the startup service. I will also give an example using `rc.local`.

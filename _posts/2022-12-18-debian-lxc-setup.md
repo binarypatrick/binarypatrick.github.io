@@ -3,7 +3,7 @@ layout: post
 title: "LXC: First commands on a new Debian CT"
 date: 2022-12-18 00:00:00 -0500
 category: "Service Setup"
-tags: ["proxmox", "lxc", "debian"]
+tags: ["proxmox", "lxc", "debian", "setup"]
 ---
 
 A list of the first commands I run on a new Debian LXC to homogenize and secure my new environment.
