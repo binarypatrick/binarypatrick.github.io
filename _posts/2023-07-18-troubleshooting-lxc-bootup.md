@@ -3,7 +3,7 @@ layout: post
 title: "Troubleshooting LXC Boot Hang"
 date: 2023-07-18 00:00:00 -0400
 category: "Troubleshooting"
-tags: ["linux", "LXC", "boot"]
+tags: ["linux", "lxc", "boot"]
 ---
 
 Recently I was troubleshooting slow bootup times with an LXC container I'd created. The container previously was running well, but after an update seemed to be running slowly. I restored it from a backup but still experienced slowness so, I investigated. The first really helpful step I found to take was to log out the bootup sequence of the container.
