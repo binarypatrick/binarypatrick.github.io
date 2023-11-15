@@ -214,7 +214,7 @@ gravity-sync auto
 
 Auto will follow use the last successful connection made, pull or push.
 
-## Updating Pi-Hole
+## Automatically Updating Pi-Hole
 
 If you regularly backup your pihole server, you can also automatically update your server. One easy way is to run a script using cron. Create the script somewhere in your home directory.
 
