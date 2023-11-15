@@ -72,7 +72,14 @@ To have a high availability cluster, you will need more than one Pi-hole instanc
 sudo apt install keepalived libipset13 -y
 ```
 
-Once installed, edit the configuration file
+By default `keepalived` will only swap over if the entire node is down. What we really want is failover when the DNS services are down. To enable service failover we will need to have `keepalived` run a script, which requires a script user. 
+
+```bash
+groupadd -r keepalived_script
+useradd -r -s /sbin/nologin -g keepalived_script -M keepalived_script
+```
+ 
+Once the user is created, we can edit the configuration file
 
 ```bash
 sudo nano /etc/keepalived/keepalived.conf
@@ -81,6 +88,16 @@ sudo nano /etc/keepalived/keepalived.conf
 Here's an example of the configuration file. Let's break it down.
 
 ```conf
+global_defs {
+   max_auto_priority
+   enable_script_security
+}
+vrrp_script dns_healthcheck {
+  script       "/usr/bin/dig @127.0.0.1 pi.hole || exit 1"
+  interval 2   # check every 2 seconds
+  fall 2       # require 2 failures for KO
+  rise 2       # require 2 successes for OK
+}
 vrrp_instance pihole {
   state <MASTER|BACKUP>
   interface ens18
@@ -101,18 +118,26 @@ vrrp_instance pihole {
   virtual_ipaddress {
     192.168.1.50/24
   }
+  
+  track_script {
+    dns_healthcheck
+  }
 }
 ```
 
-| Line | Description                                                                                                                                                                                                                                                                              |
-| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | The first thing to configure is the instance name. I have it set to `pihole`.                                                                                                                                                                                                            |
-| 2    | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluster with a higher priority, it will always become the master node. |
-| 3    | The name of the interface that the virtual IP will be bound. Can be found using `ip a`.                                                                                                                                                                                                  |
-| 5    | The priority will configure which node is the Master. The master node will always be the node with the highest priority                                                                                                                                                                  |
-| 6    | The advertisement timespan in seconds.                                                                                                                                                                                                                                                   |
-| 7    | You will need to add the node's IP                                                                                                                                                                                                                                                       |
-| 8    | The other nodes IPs                                                                                                                                                                                                                                                                      |
+| Line | Description  |
+| ---- | --- |
+| 1    | The first thing to configure is global definitions. We need to enable scripts and auto priority. |
+| 5    | Then configure the health check script. This script will make a DNS query and return 1 if it fails. `keepalived` will interpret any response other than 0 as a failure |
+| 11    | The instance name. I have it set to `pihole`. |
+| 12    | You will need to decide the node's default disposition, whether it is the master node or a backup. Keep in mind, the node's disposition will change as necessary based on other nodes. If another node enters the cluster with a higher priority, it will always become the master node. |
+| 13    | The name of the interface that the virtual IP will be bound. Can be found using `ip a`. |
+| 15    | The priority will configure which node is the Master. The master node will always be the node with the highest priority |
+| 16    | The advertisement timespan in seconds. |
+| 17    | The current node IP IP |
+| 18    | The other nodes IPs |
+| 23    | Node authentication. Keep in mind this is unencrypted, which is why we specify the other nodes by IP |
+| 32    | The script to run to verify DNS is live |
 
 > Never set an IP reservation for the virtual IP, or set it as a static address for another device
 {: .prompt-warning }
@@ -189,4 +214,37 @@ gravity-sync auto
 
 Auto will follow use the last successful connection made, pull or push.
 
+## Updating Pi-Hole
+
+If you regularly backup your pihole server, you can also automatically update your server. One easy way is to run a script using cron. Create the script somewhere in your home directory.
+
+```bash
+nano /home/patrick/.local/bin/update_pihole.sh
+```
+
+```bash
+#!/bin/bash
+
+# update pihole
+/usr/bin/sudo pihole -up
+
+# reboot
+/usr/bin/sudo systemctl reboot -i
+```
+
+Then add the script to crontab. It's a good idea to stagger the different instances of pihole so if something goes wrong, you can catch it.
+
+```bash
+crontab -e
+```
+
+```conf
+0 4 * * 7 /bin/bash /home/patrick/.local/bin/update_pihole.sh
+```
+
 Congratulations, you should now have a high availability Pi-hole cluster!
+
+## Additional Sources
+- https://github.com/hap-wi/roxy-wi/issues/224
+- https://superuser.com/questions/1436063/change-keeplived-process-user-from-root-to-keepalivedor-other
+- https://discourse.pi-hole.net/t/solved-pihole-docker-container-unhealthy/17939
