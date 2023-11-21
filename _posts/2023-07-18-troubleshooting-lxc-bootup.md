@@ -32,7 +32,11 @@ From here it looked like an issue with some service waiting for `network-online.
 systemctl show -p WantedBy network-online.target
 ```
 
-The issue seemed like `/etc/systemd/system/systemd-networkd-wait-online.service` was hung and did not return. This resulted in basically waiting 2 minutes until the timeout. Instead I made the service more specific. I used `ip link` to get the name of my ethernet adapter. Then I could check it specifically.
+The issue seemed like `/etc/systemd/system/systemd-networkd-wait-online.service` was hung and did not return. This resulted in basically waiting 2 minutes until the timeout. Instead I made the service more specific. I used `ip link` to get the name of my ethernet adapter. Then I could check it specifically using `-i eth0`.
+
+```bash
+sudo nano /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+```
 
 ```conf
 [Unit]
