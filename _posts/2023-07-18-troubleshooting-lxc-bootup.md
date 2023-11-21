@@ -21,18 +21,37 @@ See 'systemctl status ifupdown-wait-online.service' for details.
          Starting Docker Application Container Engine...
 ```
 
-From here it looked like an issue with some service waiting for `network-online.target` so I checked which services were dependent
-```shell
-systemctl show -p WantedBy network-online.target
-```
-
-I also ran the following to determine which exact service was causing the hangup.
+I ran the following to determine which exact service was causing the hangup.
 
 ```shell
 systemd-analyze blame
 ```
 
-Between the two, I found a service I had created for a specific network adapter that I had since deleted. This was causing my issue, once I unregister the service and it booted normally. An easy solution once I had visibility into an otherwise vexing problem.
+From here it looked like an issue with some service waiting for `network-online.target` so I checked which services were dependent
+```shell
+systemctl show -p WantedBy network-online.target
+```
+
+The issue seemed like `/etc/systemd/system/systemd-networkd-wait-online.service` was hung and did not return. This resulted in basically waiting 2 minutes until the timeout. Instead I made the service more specific. I used `ip link` to get the name of my ethernet adapter. Then I could check it specifically.
+
+```conf
+[Unit]
+Description=Wait for Network to be Configured
+Documentation=man:systemd-networkd-wait-online.service(8)
+DefaultDependencies=no
+Conflicts=shutdown.target
+BindsTo=systemd-networkd.service
+After=systemd-networkd.service
+Before=network-online.target shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/lib/systemd/systemd-networkd-wait-online -i eth0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network-online.target
+```
 
 ## Additional Reading
 
