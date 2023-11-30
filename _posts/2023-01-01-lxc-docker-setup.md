@@ -38,18 +38,27 @@ sudo docker run hello-world
 
 ## Install Docker Compose
 
-Debian unfortunately only ships with docker compose v1. The plugin for v2 needs to be installed manually from github releases. Keep in mind the version number can be whatever is the latest (v2.14.2 as of this post).
+Debian unfortunately only ships with docker compose v1. The plugin for v2 needs to be [installed from dockers package repo](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 
 ```bash
-mkdir -p ~/.docker/cli-plugins
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-```bash
-curl -sSL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
-```
+Then update and install docker compose
 
 ```bash
-chmod +x ~/.docker/cli-plugins/docker-compose
+sudo apt update && sudo apt install docker-compose-plugin
 ```
 
 Now check to make sure v2 is installed
