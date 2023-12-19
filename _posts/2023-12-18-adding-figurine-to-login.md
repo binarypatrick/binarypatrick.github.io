@@ -8,7 +8,7 @@ tags: ["linux", "login", "ssh"]
 
 I saw a very interesting video by [Alex Kretzschmar](https://www.youtube.com/watch?v=GPQ6k2GR17I) about how to add a nice colorful login banner using Figurine that displays the hostname. I thought this would be helpful when working with several SSH sessions, so I added it to my hosts.
 
-![Login example of figurine displaying the hostname](../assets/img/adding-figurine-login-message/login-example.png)
+![Login example of figurine displaying the hostname](/assets/img/adding-figurine-login-message/login-example.png)
 
 To start you need to download and install Figurine.
 
