@@ -74,7 +74,7 @@ CF_API_EMAIL=<Replace with cloudflare api email address>
 CF_DNS_API_TOKEN=<Replace with cloudflare api token>
 WAN_HOSTNAME=<This is to add a response header with the proxy hostname for debugging>
 
-TS_AUTHKEY={{ Tailscale auth token }}
+TS_AUTHKEY=<Tailscale auth token>
 ```
 
 Now I can add my config.yml file.
