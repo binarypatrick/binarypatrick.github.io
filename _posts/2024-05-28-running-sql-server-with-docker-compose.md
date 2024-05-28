@@ -6,7 +6,7 @@ category: "General"
 tags: ["linux", "docker", "sqlserver", "sql"]
 ---
 
-This was much easier than I thought. Using the following docker compose file, you can run SQL Server locally in docker. It is critical to use a volume for the `mssql` directory, <u>**otherwise you will lose all your data when the container restarts**</u>. The image is first party (published by Microsoft) [listed in docker hub](https://hub.docker.com/_/microsoft-mssql-server/), though the container is pulled down from Microsoft's registry directly I think.
+This was much easier than I thought. Using the following docker compose file, you can run SQL Server locally in docker. It is critical to use a volume for the `mssql` directory, **<u>otherwise you will lose all your data when the container restarts</u>**. The image is first party (published by Microsoft) [listed in docker hub](https://hub.docker.com/_/microsoft-mssql-server/), though the container is pulled down from Microsoft's registry directly I think.
 
 ```yaml
 # docker-compose.yaml
