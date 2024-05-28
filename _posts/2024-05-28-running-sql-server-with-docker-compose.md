@@ -33,4 +33,4 @@ You'll also need to change the _sa_ account password, or create an `.env` file.
 SA_PASSWORD=some_random_password
 ```
 
-Once this is up and running, you can access it normally through [SSMS](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio). The connection will require you to use encryption, though that should be handled automatically.
+Now you should be able to get things running with `docker compose up -d`. Check the logs with `docker compose logs -f`. Once this is up and running, you can access it normally through [SSMS](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio). The connection will require you to use encryption, though that should be handled automatically.
