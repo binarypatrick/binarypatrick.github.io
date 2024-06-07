@@ -6,15 +6,14 @@ category: "Service Setup"
 tags: ["proxmox", "lxc", "debian", "docker", "setup"]
 ---
 
-A quick guide to getting docker running on a Debian CT
+A quick guide to getting docker running on a Debian CT. Everything in this guide can be completed quickly by running this curl/sudo-bash script from my gist.
+
+```bash
+curl -s https://gist.githubusercontent.com/binarypatrick/1e9fcb79eec72fd82bde63a08b47a535/raw/ffacfe5f8fd9a14932e48ac290633421919981b8/debian-docker-install.sh | sudo bash
+```
+
 
 <!--more-->
-
-## CT Configuration
-
-First make sure your container is running in privileged mode and nested is enabled in Options > Features
-
-![Unprivileged Container](/assets/img/lxc-docker-setup/unprivileged-container.png)
 
 ## Installing Docker
 
@@ -48,7 +47,7 @@ sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-# Add the repository to Apt sources:
+# Add the repository to apt sources:
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
