@@ -9,7 +9,7 @@ tags: ["proxmox", "lxc", "debian", "docker", "setup"]
 A quick guide to getting docker running on a Debian CT. Everything in this guide can be completed quickly by running this curl/sudo-bash script from my gist.
 
 ```bash
-curl -s https://gist.githubusercontent.com/binarypatrick/1e9fcb79eec72fd82bde63a08b47a535/raw/ffacfe5f8fd9a14932e48ac290633421919981b8/debian-docker-install.sh | sudo bash
+curl -s https://gist.githubusercontent.com/binarypatrick/1e9fcb79eec72fd82bde63a08b47a535/raw | sudo bash
 ```
 
 
