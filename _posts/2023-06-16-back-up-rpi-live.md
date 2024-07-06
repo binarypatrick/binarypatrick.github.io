@@ -75,10 +75,13 @@ sudo nano /root/.local/bin/backup
 #!/bin/bash
 
 # Backup RPI
-image-backup --initial /mnt/backup/rpi1_$(date +%Y-%m-%d).img,,5000
+image-backup --initial /mnt/backup/rpi_$(date +%Y%m%d_%H%M%S).img,,5000
+
+# Prune backups
+prune --path /mnt/backup/ --ext img --keep-daily 7 --keep-weekly 4 --keep-monthly 2
 ```
 
-Then you'll have to add the following to the root crontab as we want the root user to run the backup. Because we put our image-util files in `/usr/local/sbin` we'll have to define that in the crontab path.
+This also [uses prune](https://binarypatrick.dev/posts/using-prune-to-manage-archives/) to ensure we don't run out of storage. Then you'll have to add the following to the root crontab as we want the root user to run the backup. Because we put our image-util files in `/usr/local/sbin` we'll have to define that in the crontab path.
 
 ```bash
 sudo crontab -e
