@@ -67,6 +67,8 @@ ExecStart=/root/remount-share.sh
 We can add the script to the root home directory. I like to put it here because system should be able to access it, and it exists alongside the credentials file.
 
 ```bash
+touch /home/root/remount-share.sh
+chmod +x /home/root/remount-share.sh
 nano /home/root/remount-share.sh
 ```
 
@@ -99,5 +101,5 @@ All of this has been scripted to make it more convenient.
 {: .prompt-warning }
 
 ```bash
-curl https://gist.githubusercontent.com/binarypatrick/c3bf8b572158655f438fa0843ffc9f2f/raw | sudo bash
+curl https://gist.githubusercontent.com/binarypatrick/d96331537d2976c3a05ce335b00697ca/raw | sudo bash -s -- "some_share_name"
 ```
