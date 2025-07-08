@@ -19,7 +19,7 @@ touch /mnt/share/unmounted
 
 ## Create the Timer
 
-I want this to run as a system service, so I'm going to add the units to `/etc/systemd/system`.
+I want this to run as a system service, so I'm going to add the units to `/etc/systemd/system`. First we add the timer unit.
 
 ```bash
 cd /etc/systemd/system
@@ -43,7 +43,7 @@ WantedBy=timers.target
 
 ## Create the Service
 
-Now we can create the service unit
+Now we can create the service unit to the same directory.
 
 ```bash
 nano remount-share.service
