@@ -6,7 +6,7 @@ category: "General"
 tags: "lxc"
 ---
 
-In `systemd`, you can create an remount unit to ensure share stay mounted. This would work perfectly, exepct, LXC does not support this `systemd` unit. So instead I created a service that runs a script, and a timer. Like a cron, but still using `systemd`
+In `systemd`, you can create an remount unit to ensure share stay mounted. This would work perfectly, except, LXC does not support this `systemd` unit. So instead I created a service that runs a script, and a timer to trigger it. Like a cron, but still using `systemd`.
 
 It works by adding a file named `unmounted` to the mount folder anchor. When the share is unmounted, this file will be visible. We can test for the file and remount when it's found.
 
