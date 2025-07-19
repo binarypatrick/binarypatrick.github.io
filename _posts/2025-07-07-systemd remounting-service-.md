@@ -3,7 +3,7 @@ layout: post
 title: "Systemd Remounting Service"
 date: 2025-07-07 -0500
 category: "General"
-tags: "lxc"
+tags: [ "lxc", "systemd", "high availablity", "setup" ]
 ---
 
 In `systemd`, you can create an remount unit to ensure share stay mounted. This would work perfectly, except, LXC does not support this `systemd` unit. So instead I created a service that runs a script, and a timer to trigger it. Like a cron, but still using `systemd`.
