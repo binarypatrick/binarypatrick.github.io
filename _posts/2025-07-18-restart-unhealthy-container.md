@@ -6,6 +6,8 @@ category: "General"
 tags: [ "systemd", "high availablity", "setup" ]
 ---
 
+![Header image of a whale with metal shipping containers on its back](/assets/img/restart-unhealthy-container/header.png)
+
 When using docker compose, I recently got into adding health checks for my containers. This helps a lot with startup, especially with dependednt containers, but I was under the impression if I had something like `restart: always` or `restart: unless-stopped`, it would automatically try and restart my container. That's just not the case so I looked for something that might.
 
 ## The Watchtower Approach
