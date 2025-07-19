@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Restart Unhealthy Docker Containers Automatically"
-date: 2025-07-018 -0500
+date: 2025-07-17 -0500
 category: "General"
 tags: [ "systemd", "high availablity", "setup" ]
 ---
