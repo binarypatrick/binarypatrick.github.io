@@ -13,11 +13,7 @@ A list of the first commands I run on a new Debian LXC to homogenize and secure 
 ## Utilities
 
 ```bash
-apt update && apt upgrade -y
-```
-
-```bash
-apt install curl nano openssl rsync fail2ban unattended-upgrades apt-listchanges lm-sensors command-not-found sudo -y
+apt update && apt upgrade -y && apt install curl nano openssl rsync fail2ban unattended-upgrades apt-listchanges lm-sensors command-not-found sudo -y
 ```
 
 ## Don't use root
@@ -32,16 +28,15 @@ passwd patrick
 
 ## Make the CLI more fun
 
-```bash
-nano /etc/bash.bashrc
-```
-
 Add the following lines to [add color to bash](https://wiki.debian.org/BashColors):
 
-```conf
+```bash
+cat <<EOF >> nano /etc/bash.bashrc
+
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
+EOF
 ```
 
 ## SSH Configuration
@@ -110,17 +105,4 @@ Unattended-Upgrade::Origins-Pattern {
 -//  "o=Debian,a=proposed-updates";
 -//  "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
 };
-
-<--->
-
-+ Unattended-Upgrade::InstallOnShutdown "false";
-- Unattended-Upgrade::InstallOnShutdown "true";
-
-<--->
-
-+ Unattended-Upgrade::Remove-Unused-Dependencies "true";
-- Unattended-Upgrade::Remove-Unused-Dependencies "false";
-
-+ Unattended-Upgrade::Automatic-Reboot "true";
-- Unattended-Upgrade::Automatic-Reboot "false";
 ```
