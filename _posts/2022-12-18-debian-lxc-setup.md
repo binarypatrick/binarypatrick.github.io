@@ -31,7 +31,7 @@ passwd patrick
 Add the following lines to [add color to bash](https://wiki.debian.org/BashColors):
 
 ```bash
-cat <<EOF >> nano /etc/bash.bashrc
+cat <<EOF >> /etc/bash.bashrc
 
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
