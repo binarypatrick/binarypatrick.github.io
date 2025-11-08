@@ -35,7 +35,7 @@ cat <<EOF >> /etc/bash.bashrc
 
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
-alias ls='ls $LS_OPTIONS'
+alias ls='ls \$LS_OPTIONS'
 EOF
 ```
 
