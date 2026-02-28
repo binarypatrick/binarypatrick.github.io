@@ -21,7 +21,11 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: [remarkAlert, remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [
+      remarkAlert,
+      remarkToc,
+      [remarkCollapse, { test: "Table of contents" }],
+    ],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "one-light", dark: "dark-plus" },
