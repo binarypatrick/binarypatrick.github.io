@@ -78,8 +78,8 @@ systemctl --user start restart-unhealthy.timer
 
 To make this easy, I created a gist that can be run from a script.
 
+> [!WARNING]
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
-> {: .prompt-warning }
 
 ```bash
 curl -s https://gist.githubusercontent.com/binarypatrick/d4faffc2807c1e68ddf1229acb057582/raw | bash

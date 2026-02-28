@@ -54,8 +54,8 @@ Now that you've compiled and tested the file, it will need to be copied to the u
 sudo mv ./display /usr/bin/uctronics-display
 ```
 
+> [!WARNING]
 > Note that the binary is renamed to `uctronics-display` with the command
-> {: .prompt-warning }
 
 ## Autostart
 

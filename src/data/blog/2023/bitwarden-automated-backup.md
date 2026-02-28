@@ -79,8 +79,8 @@ export BW_NOTIFICATION_EMAIL="<your_notification_email_address>"
 
 The scripts we're going to run live a repo named [BitwardenBackup](https://github.com/BinaryPatrick/BitwardenBackup). Definitely review the code that will be running. The script needs to be put somewhere the Bitwarden user can read it, and it needs to be set as executable.
 
+> [!WARNING]
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
-> {: .prompt-warning }
 
 ```bash
 REPO_BACKUP_SCRIPT=https://raw.githubusercontent.com/BinaryPatrick/BitwardenBackup/main/backup.sh

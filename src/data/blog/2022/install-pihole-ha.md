@@ -138,9 +138,8 @@ vrrp_instance pihole {
 | 18   | The other nodes IPs                                                                                                                                                                                                                                                                      |
 | 23   | Node authentication. Keep in mind this is unencrypted, which is why we specify the other nodes by IP                                                                                                                                                                                     |
 | 32   | The script to run to verify DNS is live                                                                                                                                                                                                                                                  |
-
+> [!WARNING]
 > Never set an IP reservation for the virtual IP, or set it as a static address for another device
-> {: .prompt-warning }
 
 Also keep in mind, this is set up for unicast, but can be configured for multicast. I just like to be explicit. You can find more details about [keepalived configuration here](https://keepalived.readthedocs.io/en/latest/configuration_synopsis.html).
 

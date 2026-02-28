@@ -26,8 +26,8 @@ To install it, follow the guide on the github page, but here is a simplified ver
 
 ## Scripts Install
 
+> [!WARNING]
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
-> {: .prompt-warning }
 
 ```bash
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ./image-utils
@@ -53,8 +53,8 @@ sudo image-backup --initial /mnt/backup/$(date +"%Y-%m-%d").img,,5000
 
 The backup run time will depend on your device and how much data it needs to copy. It is surprisingly fast though. 15GB usually runs for 2+ minutes on a Raspberry Pi 4B.
 
+> [!WARNING]
 > Backup can be pretty large, ~15GB depending on how much you have running on your Pi
-> {: .prompt-warning }
 
 Once you have a completed backup, you can run an incremental backup by running `image-backup` and providing an existing backup to update.
 

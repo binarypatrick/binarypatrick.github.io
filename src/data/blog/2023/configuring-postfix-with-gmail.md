@@ -39,8 +39,8 @@ smtp_use_tls = yes
 
 Notice that instead of adding your gmail credentials directly, we're adding them to a file named `gmail_credentials`. Your credentials will depend on whether you use multi-factor authentication (MFA/2FA) or not. If you are now, then you can just put your credentials directly into this file, otherwise you'll need to create an app password. It is highly recommended to use multi-factor authentication whenever possible so I'll assume you are.
 
+> [!TIP]
 > It is highly recommended to use multi-factor authentication whenever possible
-> {: .prompt-tip }
 
 Go to your [Google account page](https://myaccount.google.com/) and select _Security_ from the side navigation. Then in the center, select _2-Step Verification_. After verifying it's really you, scroll to the bottom and find _App Passwords_. From this page you can generate a new app specific password. I often select custom from the drop down and give it a descriptive name, then select _Generate_.
 
