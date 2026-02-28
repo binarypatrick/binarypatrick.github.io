@@ -57,7 +57,7 @@ jobs:
         run: pnpm run build
 
       - name: "Copy to base path"
-        run: cp dist _site${{ steps.pages.outputs.base_path }}
+        run: cp -r dist _site${{ steps.pages.outputs.base_path }}
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
