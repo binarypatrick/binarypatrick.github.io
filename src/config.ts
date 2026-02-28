@@ -1,8 +1,8 @@
 export const SITE = {
   website: "https://binarypatrick.dev/", // replace this with your deployed domain
   author: "BinaryPatrick",
-  profile: "https://binarypatrick.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  profile: "",
+  desc: "A technical developer blog focused on small guides for things I've struggled with or created.",
   title: "BinaryPatrick",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
