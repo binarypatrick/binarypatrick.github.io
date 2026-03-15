@@ -68,7 +68,7 @@ sudo chmod 600 /home/bitwarden/.bash_profile
 sudo nano /home/bitwarden/.bash_profile
 ```
 
-```conf
+```plaintext
 export BW_CLIENTID="<your_client_id>"
 export BW_CLIENTSECRET="<your_client_secret>"
 export BW_PASSWORD="<your_vault_password"
@@ -101,7 +101,7 @@ sudo su bitwarden
 crontab -e
 ```
 
-```conf
+```plaintext
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 0 0 * * * BASH_ENV=/home/bitwarden/.bash_profile /bin/bash /home/bitwarden/backup.sh /home/bitwarden
 ```

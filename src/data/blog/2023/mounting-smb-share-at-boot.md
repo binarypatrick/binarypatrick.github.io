@@ -32,7 +32,7 @@ Then I'll need to edit the `fstab` file so that my share is mounted at boot.
 sudo nano /etc/fstab
 ```
 
-```conf
+```plaintext
 //<server>/<share> /mnt/backup cifs vers=3.0,credentials=/root/.mnt_backup_creds,uid=1000,gid=1000 0 0
 ```
 
@@ -44,7 +44,7 @@ Notice I do not specify the credentials in `fstab`. Instead I designate a creden
 sudo nano /root/.mnt_backup_creds
 ```
 
-```conf
+```plaintext
 username=<username>
 password=<password>
 ```

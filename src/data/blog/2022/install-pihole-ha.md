@@ -60,7 +60,7 @@ The last change that I make is to redirect HTTP requests to the root path to the
 sudo nano /etc/lighttpd/lighttpd.conf
 ```
 
-```conf
+```plaintext
 url.redirect = ("^/$" => "/admin" )
 ```
 
@@ -87,7 +87,7 @@ sudo nano /etc/keepalived/keepalived.conf
 
 Here's an example of the configuration file. Let's break it down.
 
-```conf
+```plaintext
 global_defs {
    max_auto_priority
    enable_script_security
@@ -238,7 +238,7 @@ Then add the script to crontab. It's a good idea to stagger the different instan
 crontab -e
 ```
 
-```conf
+```plaintext
 0 4 * * 7 /bin/bash /home/patrick/.local/bin/update_pihole.sh
 ```
 

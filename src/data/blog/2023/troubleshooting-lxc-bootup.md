@@ -40,7 +40,7 @@ The issue seemed like `/etc/systemd/system/systemd-networkd-wait-online.service`
 sudo nano /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
 ```
 
-```conf
+```plaintext
 [Unit]
 Description=Wait for Network to be Configured
 Documentation=man:systemd-networkd-wait-online.service(8)

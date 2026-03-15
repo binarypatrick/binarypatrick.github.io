@@ -29,7 +29,7 @@ sudo nano /etc/postfix/main.cf
 
 Append the following to the end:
 
-```conf
+```plaintext
 relayhost = [smtp.gmail.com]:587
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/gmail_credentials
@@ -50,7 +50,7 @@ Remember to copy the generated password, because you will never see it again. No
 sudo nano /etc/postfix/gmail_credentials
 ```
 
-```conf
+```plaintext
 [smtp.gmail.com]:587 <username>@gmail.com:<password>
 ```
 

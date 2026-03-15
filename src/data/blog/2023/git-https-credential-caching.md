@@ -18,7 +18,7 @@ git config --global credential.helper 'cache --timeout=3600'
 
 I also make sure my .git/config contains the username so I don't need to type that in over and over.
 
-```conf
+```plaintext
 https://<USERNAME>@github.com/path/to/repo.git
 ```
 

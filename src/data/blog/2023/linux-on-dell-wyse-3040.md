@@ -74,7 +74,7 @@ I had an issue where my Wyse 3040 hung on shutdown and reboot. It would shutdown
 sudo nano /etc/modprobe.d/blacklist.conf
 ```
 
-```conf
+```plaintext
 blacklist dw_dmac_core
 install dw_dmac /bin/true
 install dw_dmac_core /bin/true

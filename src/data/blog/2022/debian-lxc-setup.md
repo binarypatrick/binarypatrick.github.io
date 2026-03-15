@@ -55,7 +55,7 @@ I always disallow login for root over SSH and allow password logins for other us
 nano /etc/ssh/sshd_config
 ```
 
-```conf
+```plaintext
 # Authentication:
 LoginGraceTime 2m
 PermitRootLogin no
@@ -78,7 +78,7 @@ To allow a user to execute `sudo` commands without being prompted for a password
 nano /etc/sudoers.d/patrick
 ```
 
-```conf
+```plaintext
 patrick ALL=(ALL) NOPASSWD: ALL
 ```
 

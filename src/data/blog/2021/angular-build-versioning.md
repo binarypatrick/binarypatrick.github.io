@@ -2,7 +2,7 @@
 layout: post
 title: "Adding build versions in Angular"
 pubDatetime: 2021-03-04T19:30:00
-tags: [ "angular 2", "gitops", "CI/CD"]
+tags: ["angular 2", "gitops", "CI/CD"]
 description: "Have you ever found yourself wondering which version of an SPA is running when you pull up your site? This was a problem I wanted to answer in my Angular SPA. Utilizing the `npm version` command in my build pipeline, I was able to include my pipeline build number in my app, significantly decreased troubleshooting time and version confusion."
 ---
 

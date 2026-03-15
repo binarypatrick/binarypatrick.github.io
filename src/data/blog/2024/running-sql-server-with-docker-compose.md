@@ -28,7 +28,7 @@ services:
 
 You'll also need to change the _sa_ account password, or create an `.env` file.
 
-```conf
+```plaintext
 # .env
 
 SA_PASSWORD=some_random_password
