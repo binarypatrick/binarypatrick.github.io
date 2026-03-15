@@ -29,7 +29,7 @@ passwd patrick
 
 ## Enable Fail2ban
 
-``` bash
+```bash
 sudo systemctl enable --now fail2ban && sudo systemctl status fail2ban
 sudo fail2ban-client status
 ```
@@ -95,5 +95,5 @@ sudo sed -i '/Unattended-Upgrade::Origins-Pattern {/a\    "origin=*";' /etc/apt/
 Verify the change
 
 ```bash
-sudo head -n 50 /etc/apt/apt.conf.d/50unattended-upgrades
+sudo head 50 /etc/apt/apt.conf.d/50unattended-upgrades
 ```
