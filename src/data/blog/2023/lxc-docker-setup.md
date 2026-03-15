@@ -21,7 +21,7 @@ curl -s https://gist.githubusercontent.com/binarypatrick/1e9fcb79eec72fd82bde63a
 Then you'll need to login and install docker.
 
 ```bash
-sudo apt install docker.io -y && sudo systemctl enable docker
+sudo apt update && sudo apt install docker.io docker-compose -y && sudo systemctl enable docker
 ```
 
 Then start and confirm the service
@@ -30,41 +30,17 @@ Then start and confirm the service
 sudo systemctl start docker && sudo systemctl status docker
 ```
 
+Now check to make sure v2 is installed
+
+```bash
+docker version
+docker compose version
+```
+
 To ensure Docker is running correctly you can try to run a simple hello-world container
 
 ```bash
 sudo docker run hello-world
-```
-
-## Install Docker Compose
-
-Debian unfortunately only ships with docker compose v1. The plugin for v2 needs to be [installed from dockers package repo](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
-
-```bash
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-# Add the repository to apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-Then update and install docker compose
-
-```bash
-sudo apt update && sudo apt install docker-compose-plugin
-```
-
-Now check to make sure v2 is installed
-
-```bash
-docker compose version
 ```
 
 ## Run Docker from a non-root user without sudo
