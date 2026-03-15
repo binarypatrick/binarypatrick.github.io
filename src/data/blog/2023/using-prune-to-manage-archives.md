@@ -14,8 +14,8 @@ Often times when using a tool like rsync to make backups you end up with lots of
 
 To install Prune you can go to the [releases page](https://github.com/BinaryPatrick/Prune/releases) and download the latest release for your environment. You can also just clone the repo and compile it yourself with the steps in the readme. If you are running Linux on x64 you can also run the following commands to download and install Prune.
 
+> [!WARNING]
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
-> {: .prompt-warning }
 
 ```bash
 curl https://raw.githubusercontent.com/BinaryPatrick/Prune/main/scripts/install-linux-x64.sh | sudo bash

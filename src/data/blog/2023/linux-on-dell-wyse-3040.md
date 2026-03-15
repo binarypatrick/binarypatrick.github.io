@@ -24,8 +24,8 @@ This is pretty easy to do. In the BIOS, navigate to _Maintenance > Data Wipe_ an
 
 Picking a disto is tricky here. My device only had a 16 GB eMMC drive, which is really 14.8 GB. Most distros require 16 actually GB. Debian does not though and installing a minimal version works well for this low power device. Luckily Debian 12 (Bookworm) just came out so I used that. I also used [Ventoy](https://www.ventoy.net/en/download.html), but you however you choose get it on a USB stick and in the device.
 
+> [!TIP]
 > Debian 12 is a good pick with only 16 GB eMMC and 2 GB RAM
-> {: .prompt-tip }
 
 ![Debian 12 Install (Non-GUI)](../../../assets/images/2023/linux-on-dell-wyse-3040/debian-12-install.png)
 
@@ -37,8 +37,8 @@ I leave the root password empty. This will assign the initial user account to th
 
 Once Debian is installed, it may not boot up correctly. You may get an error saying `No bootable devices found`. Wyse devices require a `BOOTX64.EFI` file. To add this file, I loaded Debian Live and mounted the eMMC device. On my instance, the eMMC device has the label `mmcblk0p1`. Use the following to mount this device.
 
+> [!WARNING]
 > Wyse devices require a `/boot/efi/EFI/BOOT/BOOTX64.EFI` file to boot to the eMMC
-> {: .prompt-warning }
 
 ```bash
 sudo mkdir /mnt/debian

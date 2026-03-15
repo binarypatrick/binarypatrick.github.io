@@ -102,8 +102,8 @@ systemctl status remount-share.timer && systemctl status remount-share.service
 
 All of this has been scripted to make it more convenient.
 
+> [!WARNING]
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
-> {: .prompt-warning }
 
 ```bash
 curl https://gist.githubusercontent.com/binarypatrick/d96331537d2976c3a05ce335b00697ca/raw | sudo bash -s -- "some_share_name"

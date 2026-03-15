@@ -73,8 +73,8 @@ docker compose version
 sudo usermod -aG docker $USER
 ```
 
+> [!WARNING]
 > You'll need to logout and log back in for the change to take effect
-> {: .prompt-warning }
 
 ## Installing Lazydocker
 
