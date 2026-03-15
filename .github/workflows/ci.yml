@@ -54,6 +54,8 @@ jobs:
         run: pnpm run format:check
 
       - name: "🚀 Build the project"
+        env:
+          VITE_APP_VERSION: ${{ github.sha }}
         run: pnpm run build
 
       - name: "Copy to base path"
