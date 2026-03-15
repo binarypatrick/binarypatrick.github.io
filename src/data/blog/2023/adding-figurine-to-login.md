@@ -16,7 +16,7 @@ To do this quickly and use the hostname for the login message, you can use thise
 > Don't just take my word for it. Always inspect the code that will be running on your machines, especially from an untrusted and unsigned source.
 
 ```bash
-curl https://gist.githubusercontent.com/binarypatrick/2e33d8d3c79210dc74077627cb0deb9c/raw/ | sudo bash
+curl -s https://gist.githubusercontent.com/binarypatrick/2e33d8d3c79210dc74077627cb0deb9c/raw/ | sudo bash
 ```
 
 ![Login example of figurine displaying the hostname](../../../assets/images/2023/adding-figurine-login-message/login-example.png)
