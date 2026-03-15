@@ -5,8 +5,7 @@ featured: false
 draft: false
 pubDatetime: 2020-07-16T12:00:00
 slug: hello-world-2020
-tags:
-  - Meta
+tags: ["meta"]
 description: "Finally, I have a blog set up! This is the first post ever."
 timezone: "America/New_York"
 ---

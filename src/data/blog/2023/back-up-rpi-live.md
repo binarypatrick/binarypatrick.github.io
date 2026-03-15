@@ -2,7 +2,7 @@
 layout: post
 title: "Backing up a Raspberry Pi Live"
 pubDatetime: 2023-06-16T08:00:00
-tags: ["Raspberry PI", "Backup"]
+tags: ["raspberry pi", "backup"]
 description: "In a effort to keep all my devices backed up, I have been looking into a way to backup my Raspberry Pi devices."
 ---
 

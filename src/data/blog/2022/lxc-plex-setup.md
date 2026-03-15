@@ -2,7 +2,7 @@
 layout: post
 title: "LXC: Setting up Plex"
 pubDatetime: 2022-12-18T23:00:00
-tags: ["Plex", "Service Setup"]
+tags: ["plex", "service setup"]
 description: "After setting up a new server, I wanted to migrate my plex install to the more powerful machine. This will be a jump from an i3-2100 to an i5-12500T. A substantial leap in performance."
 ---
 

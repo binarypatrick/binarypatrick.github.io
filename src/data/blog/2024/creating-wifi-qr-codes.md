@@ -3,7 +3,7 @@ layout: post
 title: "Creating QR Codes for WiFi"
 pubDatetime: 2024-07-21
 category: "General"
-tags: ["Linux", "QR"]
+tags: ["linux", "qr"]
 description:
   "Here's an easy way to create a QR code image you can print out and display
   so people can quickly join your WiFi network. In Debian, install qrencode."

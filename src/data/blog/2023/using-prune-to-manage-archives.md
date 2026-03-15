@@ -2,7 +2,7 @@
 layout: post
 title: "Using Prune to Manage Archives"
 pubDatetime: 2023-07-02T00:00:00
-tags: ["Linux", "Backup", "FOSS"]
+tags: ["linux", "backup", "FOSS"]
 description: "A quick look at a nifty tool that lets you prune backup files"
 ---
 

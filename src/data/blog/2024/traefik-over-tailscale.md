@@ -3,7 +3,7 @@ layout: post
 title: "Configuring Traefik to work over Tailscale"
 pubDatetime: 2024-05-27
 category: "General"
-tags: ["Linux", "Docker"]
+tags: ["linux", "docker"]
 description:
   "This is a bit of an extention to this tailscale blog post. I would start there to get an idea of setting
   up tags and auth, as well as just information about exactly what this does in more detail."

@@ -3,7 +3,7 @@ layout: post
 title: "Bitwarden Automated Backup"
 pubDatetime: 2023-06-26T12:00:00
 featured: true
-tags: ["Linux", "Bitwarden", "Backup"]
+tags: ["linux", "bitwarden", "backup"]
 description: A detailed backup process for Bitwarden enabling local, encrypted vault backups. The process uses the Bitwarden CLI and runs locally on a linux instance.
 ---
 

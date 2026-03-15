@@ -2,7 +2,7 @@
 layout: post
 title: "Configuring Home Assistant for Reverse Proxy"
 pubDatetime: 2023-1-23T12:00:00
-tags: ["Home Assistant", "Traefik"]
+tags: ["home assistant", "traefik"]
 description:
   "This is a quick reminder for the code that needs to be added to the Home Assistant
   configuration YAML to get things working with a reverse proxy."

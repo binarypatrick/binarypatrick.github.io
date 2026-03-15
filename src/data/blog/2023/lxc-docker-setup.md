@@ -2,7 +2,7 @@
 layout: post
 title: "LXC: Installing Docker on a Debian CT"
 pubDatetime: 2023-1-1T12:00:00
-tags: ["Proxmox", "LXC", "Debian", "Docker", "Service Setup"]
+tags: ["proxmox", "LXC", "debian", "docker", "service setup"]
 description:
   "A quick guide to getting docker running on a Debian CT. Everything in this guide
   can be completed quickly by running this curl/sudo-bash script from my gist."

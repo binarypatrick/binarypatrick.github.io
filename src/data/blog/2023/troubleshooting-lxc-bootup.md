@@ -2,7 +2,7 @@
 layout: post
 title: "Troubleshooting LXC Boot Hang"
 pubDatetime: 2023-07-18T00:00:00
-tags: ["Proxmox", "LXC", "Boot"]
+tags: ["proxmox", "LXC", "boot"]
 description: ""
 ---
 

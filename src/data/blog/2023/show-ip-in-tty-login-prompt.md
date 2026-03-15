@@ -2,7 +2,7 @@
 layout: post
 title: "Show IP on TTY Login Prompt"
 pubDatetime: 2023-06-25T00:00:00
-tags: ["Linux", "Debian", "Login"]
+tags: ["linux", "debian", "login"]
 description:
   "When I first log into a linux instance I've set up, I often look to find the ethernet
   adapter details. To make this easier, I like to add the IP address to the TTY login screen.

@@ -3,11 +3,7 @@ layout: post
 slug: autostart-api-spa
 title: "Start a SPA and it's API in one click"
 pubDatetime: 2021-06-16T12:00:00
-tags:
-  - Powershell
-  - Terminal
-  - Angular 2
-  - .NET
+tags: ["powershell", "terminal", "angular 2", ".NET"]
 description: 'I''ve been using start or jump scripts for a long time to start up my API and SPA at the same time. With project TYE on the horizon, I thought I would share more about my more simplistic, "poor mans", implementation.'
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Adding a Figurine Login Message"
 pubDatetime: 2023-12-18T00:00:00
-tags: ["Linux", "Login", "SSH"]
+tags: ["linux", "login", "ssh"]
 description:
   "I saw a very interesting video by Alex Kretzschmar about how to add a nice colorful login banner using Figurine
   that displays the hostname. I thought this would be helpful when working with several SSH sessions, so I added it to my hosts."

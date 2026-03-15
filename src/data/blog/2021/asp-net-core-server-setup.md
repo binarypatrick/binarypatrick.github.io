@@ -3,9 +3,7 @@ layout: post
 slug: net-core-host-setup
 title: "ASP.Net Core Host Initial Setup"
 pubDatetime: 2021-04-08T12:00:00
-tags:
-  - .NET
-  - Server Configuration
+tags: [".net", "server configuration" ]
 description: "I wanted to document some important steps I take setting up a new server for hosting ASP.Net Core apps. These steps change over time as versions and features change, but this post will serve as a good, general guide for things to consider and remember; both for myself and anyone else who stumbles across it!"
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Pi-hole setup with High Availablity"
 pubDatetime: 2022-12-18T01:00:00
-tags: ["PiHole", "Service Setup", "High Availablity", "DNS", "Spam"]
+tags: ["pihole", "service setup", "high availablity", "dns", "spam"]
 description: "This is a step by step guide to set up Pi-hole in a high availability environment. Previously I was using a lone Raspberry Pi 3B to run Pi-hole. The issue with this setup was, if that pi went down, DNS was down on my network, which is definitely unacceptable. So let make it better!"
 ---
 

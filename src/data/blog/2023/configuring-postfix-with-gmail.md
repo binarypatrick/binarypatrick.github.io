@@ -2,7 +2,7 @@
 layout: post
 title: "Configuring Postfix with Gmail"
 pubDatetime: 2023-06-26T00:00:00
-tags: ["Linux", "Postfix", "Email", "Gmail"]
+tags: ["linux", "postfix", "email", "gmail"]
 description:
   "Email is often a critical component notification for jobs and other things in linux.
   This is how I set up [Postfix](https://www.postfix.org/) on most of my instances. This

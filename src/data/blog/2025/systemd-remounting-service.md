@@ -3,7 +3,7 @@ layout: post
 title: "Systemd Remounting Service"
 pubDatetime: 2025-07-07
 category: "General"
-tags: ["LXC", "systemd", "High Availablity", "Service Setup"]
+tags: ["LXC", "systemd", "high availablity", "service setup"]
 description:
   "In systemd, you can create an remount unit to ensure share stay mounted. This would work
   +perfectly, except, LXC does not support this systemd unit. So instead I created a service

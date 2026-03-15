@@ -2,7 +2,7 @@
 layout: post
 title: "Reaching Quorum in Proxmox with an External QDevice"
 pubDatetime: 2023-02-27T00:00:00
-tags: ["Proxmox", "QDevice", "CoroSync"]
+tags: ["proxmox", "qdevice", "corosync"]
 description:
   "Having only two nodes in my Proxmox cluster, I wanted to add a third external device
   to keep quorum during reboots or other outages. To do so I added an external qdevice

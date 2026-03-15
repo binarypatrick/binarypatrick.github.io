@@ -3,7 +3,7 @@ layout: post
 title: "Using curl with SNI"
 pubDatetime: 2024-05-01
 featured: false
-tags: ["Linux", "Bash"]
+tags: ["linux", "bash"]
 description:
   "This is a short little reminder for myself, when using curl to make requests
   to local things and spoofing SNI, use the following command."

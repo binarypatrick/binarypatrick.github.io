@@ -5,7 +5,7 @@ featured: true
 draft: false
 pubDatetime: 2026-03-15T12:00:00
 slug: smb-for-lxc
-tags: ["LXC", "systemd", "Proxmox"]
+tags: ["LXC", "systemd", "proxmox"]
 description: "Passing an SMB share from the proxmox host to LXC"
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Running SQL Server using Docker Compose"
 pubDatetime: 2024-05-28
 category: "General"
-tags: ["Linux", "Docker", "SQL Server", "SQL"]
+tags: ["linux", "docker", "sql server", "sql"]
 description: "A quick way to run SQL Server in a container"
 ---
 

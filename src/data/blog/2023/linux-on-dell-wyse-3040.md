@@ -2,7 +2,7 @@
 layout: post
 title: "Installing Debian on Dell Wyse 3040"
 pubDatetime: 2023-06-25T12:00:00
-tags: ["Linux", "Debian"]
+tags: ["linux", "debian"]
 description:
   "Recently picked up a very low power Dell Wyse 3040 to use as a headless
   docker host. It is powered by a quad-core Intel Atom Z8350 so not a lot

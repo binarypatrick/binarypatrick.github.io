@@ -2,9 +2,7 @@
 layout: post
 title: "Creating a super Outlook SPAM Rule"
 pubDatetime: 2021-03-23T22:40:00
-tags:
-  - Outlook
-  - Spam
+tags: ["outlook", "spam"]
 description: "After signing up for several virtual conferences in 2020, I noticed my work inbox was becoming inundated with junk email. Now this being my work email, I don't use it for any personal correspondence, and frankly never respond to anyone outside of my work's domain. Using Outlook online's email rules, I was able to eliminate all SPAM from my inbox in one easy move."
 ---
 

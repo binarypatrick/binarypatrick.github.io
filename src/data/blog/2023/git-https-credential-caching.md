@@ -2,7 +2,7 @@
 layout: post
 title: "Git Credential Caching"
 pubDatetime: 2023-06-14T00:00:00
-tags: ["Git"]
+tags: ["git"]
 description:
   "Having a local git repo configured, I haven't yet set up ssh authentication. Instead I
   use HTTPS with a username and password. It can be tiresome typing in the login credentials

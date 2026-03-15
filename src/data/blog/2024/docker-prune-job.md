@@ -3,7 +3,7 @@ layout: post
 title: "Docker Prune Cron Job"
 pubDatetime: 2024-05-27
 category: "General"
-tags: ["Linux", "Docker"]
+tags: ["linux", "docker"]
 description:
   "This is a helpful way to keep your containers from running out of space.
   Create a auto-prune cron job and put it in etc/cron.daily."

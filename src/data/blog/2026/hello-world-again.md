@@ -5,8 +5,7 @@ featured: false
 draft: false
 pubDatetime: 2026-02-26T12:00:00
 slug: hello-world-again
-tags:
-  - Meta
+tags: [ "meta" ]
 description: "Finally, I have a blog set up! This is the first post ever."
 ---
 
