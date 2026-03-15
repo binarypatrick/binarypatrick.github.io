@@ -3,7 +3,7 @@ layout: post
 title: Passing SMB to LXC on Proxmox
 featured: true
 draft: false
-pubDatetime: 2026-02-26T12:00:00
+pubDatetime: 2026-03-15T12:00:00
 slug: hello-world-again
 tags: ["LXC", "systemd", "Proxmox"]
 description: "Passing an SMB share from the proxmox host to LXC"
