@@ -71,7 +71,7 @@ certificatesResolvers:
 
 I think this is a pretty standard config that will allow Traefik to configure Cloudflare to create LetsEncrypt certificates automatically. Once that's created I create a `.env` with the following values. You'll need to create a [cloudflare API token](https://dash.cloudflare.com/profile/api-tokens). You'll also need to create [some kind of Tailscale auth](https://login.tailscale.com/admin/settings/keys)
 
-```env
+```plaintext
 # Enviornmental Variables file .env
 CF_API_EMAIL=<Replace with cloudflare api email address>
 CF_DNS_API_TOKEN=<Replace with cloudflare api token>

@@ -72,7 +72,5 @@ export default defineConfig({
       styles: ["normal", "italic"],
     },
   ],
-  experimental: {
-    // preserveScriptOrder: true,
-  },
+  // preserveScriptOrder: true,
 });
