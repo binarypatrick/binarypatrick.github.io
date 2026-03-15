@@ -27,6 +27,13 @@ chsh -s /bin/bash patrick
 passwd patrick
 ```
 
+## Enable Fail2ban
+
+``` bash
+sudo systemctl enable --now fail2ban && sudo systemctl status fail2ban
+sudo fail2ban-client status
+```
+
 ## Make the CLI more fun
 
 Add the following lines to [add color to bash](https://wiki.debian.org/BashColors):
@@ -79,30 +86,14 @@ patrick ALL=(ALL) NOPASSWD: ALL
 
 ## Unattended Upgrades Configuration
 
-Edit the following file.
+Update every package by default
 
 ```bash
-sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+sudo sed -i '/Unattended-Upgrade::Origins-Pattern {/a\    "origin=*";' /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 
-Uncomment the following line
+Verify the change
 
-```diff
-Unattended-Upgrade::Origins-Pattern {
-+    "origin=*";
--    "origin=Debian,codename=${distro_codename}-updates";
--//  "origin=Debian,codename=${distro_codename}-proposed-updates";
--    "origin=Debian,codename=${distro_codename},label=Debian";
--    "origin=Debian,codename=${distro_codename},label=Debian-Security";
--    "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
-
--    // Archive or Suite based matching:
--    // Note that this will silently match a different release after
--    // migration to the specified archive (e.g. testing becomes the
--    // new stable).
--//  "o=Debian,a=stable";
--//  "o=Debian,a=stable-updates";
--//  "o=Debian,a=proposed-updates";
--//  "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
-};
+```bash
+sudo head -n 50 /etc/apt/apt.conf.d/50unattended-upgrades
 ```
