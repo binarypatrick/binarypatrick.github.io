@@ -5,7 +5,7 @@ featured: true
 draft: false
 pubDatetime: 2026-02-26T12:00:00
 slug: hello-world-again
-tags: [ "LXC", "systemd", "Proxmox" ]
+tags: ["LXC", "systemd", "Proxmox"]
 description: "Passing an SMB share from the proxmox host to LXC"
 ---
 
@@ -50,7 +50,7 @@ chmod 700 *
 ### Mount Unit
 
 ```ini
-# mnt-filehost-documents.mount  
+# mnt-filehost-documents.mount
 [Unit]
 Description=samba mount for //filehost.internal/documents for the proxmox user
 Requires=systemd-networkd.service
@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 ### Automount Unit
 
 ```ini
-# mnt-filehost-documents.automount  
+# mnt-filehost-documents.automount
 [Unit]
 Description=Automount for mnt-filehost-documents
 
