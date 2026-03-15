@@ -2,7 +2,7 @@
 layout: post
 title: "Using curl with SNI"
 pubDatetime: 2024-05-01
-featured: true
+featured: false
 tags: ["Linux", "Bash"]
 description:
   "This is a short little reminder for myself, when using curl to make requests
