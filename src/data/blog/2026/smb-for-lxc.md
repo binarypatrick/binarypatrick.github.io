@@ -135,18 +135,18 @@ ls -la
 ```
 
 ```diff
-  hostname: paperless
-  arch: amd64
-  cores: 4
-  memory: 2048
-  tags: debian13;samba;
+ hostname: paperless
+ arch: amd64
+ cores: 4
+ memory: 2048
+ tags: debian13;samba;
 
-  ---
+ ---
 
-  unprivileged: 1
-  features: nesting=1
+ unprivileged: 1
+ features: nesting=1
 
-+ mp0: /mnt/filehost/documents,mp=/mnt/documents,replicate=0
++mp0: /mnt/filehost/documents,mp=/mnt/documents,replicate=0
 ```
 
 The first path configures the host mount folder. The second is where that folder will appear in the LXC. `replicate=0` tells proxmox not to back up the share. Now I should be able to start my LXC and navigate to the mount point from within.
