@@ -106,7 +106,7 @@ Breaking it down by token:
 - `/dev/dri/card1` - the path on the host to the device being passed through. Proxmox will bind-mount this into the container.
 - `gid=44` - the group ID that will own the device node inside the container. This is what makes it accessible to the video group (GID 44) inside the LXC, so the plex user can actually use it.
 
-One important thing to understand is the gid here is applied to the device node as seen from ***inside*** the container. That's why it needs to match the GID of the video/render group inside the LXC specifically, not necessarily the host's GID. Often they are the same, though sometimes they are not, which was my problem.
+One important thing to understand is the gid here is applied to the device node as seen from **_inside_** the container. That's why it needs to match the GID of the video/render group inside the LXC specifically, not necessarily the host's GID. Often they are the same, though sometimes they are not, which was my problem.
 
 You'll need to start the LXC and then run the following command to find the correct GID.
 
@@ -125,7 +125,7 @@ render:x:105:plex
 This is where the GIDs in my configuration are derived, `44` and `105` respectively.
 
 > [!IMPORTANT]
-> the device GID refers to the device node as seen from ***inside*** the container.
+> the device GID refers to the device node as seen from **_inside_** the container.
 
 ## Restart or Reinstall Plex
 
