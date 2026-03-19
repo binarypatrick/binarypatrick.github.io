@@ -22,13 +22,11 @@ Every device is different, and the numbers matter. So I start by first enumerati
 ls -la /dev/dri
 ```
 
-/dev/dri stands for Direct Rendering Infrastructure. It's a directory in Linux that contains device files used for direct GPU access.
+The DRI in `/dev/dri` stands for Direct Rendering Infrastructure. It's a directory in Linux that contains device files used for direct GPU access.
 
-Typically you'll find `/dev/dri/card0`, `card1`, etc. These respresent the GPU(s) you have installed in the maching.
+Typically you'll find `/dev/dri/card0`, `card1`, etc. These respresent the GPU(s) installed in the machine.
 
-Alongside them, you'll have render nodes. `/dev/dri/renderD128`, `renderD129` These are also important for transcoding. They allow unprivileged GPU access for compute and rendering tasks (3D rendering, video encoding/decoding, GPU-accelerated computing) without requiring display out. Applications like Vulkan, OpenGL, VA-API, and CUDA can use these.
-
-You'll note in my machine, there is no `card0`, but there is a `card1` even though I only have 1 GPU installed. Also note the numbers following both the card and render node, `226:1` and `226:128`. These are the device driver major and minor numbers, identify what driver to use.
+Alongside them are the render nodes. `/dev/dri/renderD128`, `renderD129` These are also important for transcoding. They allow unprivileged GPU access for compute and rendering tasks (3D rendering, video encoding/decoding, GPU-accelerated computing) without requiring display out. Applications like Vulkan, OpenGL, VA-API, and CUDA can use these.
 
 ```bash
 drwxr-xr-x  3 root root        100 Mar 16 15:04 .
@@ -38,12 +36,14 @@ crw-rw----  1 root video  226,   1 Mar 16 15:05 card1
 crw-rw----  1 root render 226, 128 Mar 16 15:04 renderD128
 ```
 
+You'll note on my machine, there is no `card0`, but there is a `card1` even though I only have 1 GPU. Also note the numbers following both the card and render node, `226:1` and `226:128`. These are the device driver major and minor numbers, identify what driver to use.
+
 > [!NOTE]
 > In proxmox, usually the user running PVE is root, so there shouldn't be a permissions issue.
 
 ## Granting access to the LXC
 
-Stop your LXC in the GUI and then edit the configuration. For this example I'm going to use LXC ID 100.
+Stop your LXC in the GUI and then edit the configuration from the CLI. For this example I'm going to use LXC ID 100.
 
 ```bash
 cd /etc/pve/lxc
@@ -94,11 +94,9 @@ Breaking it down by token:
 
 So the full line is telling the cgroup to allow the LXC container to read, write, and create the character device with major:minor 226:128, which is my renderD128 render node.
 
-Under the cgroup lines are the device permissions.
+### Device Permissions
 
-### dev
-
-Here I've added the paths to the hardware on the host. You'll notice them from before, `/dev/dri/card1` and `/dev/dri/renderD128`.
+Next, under cgroup, I've added the paths to the hardware on the host. You'll notice they match from before: `/dev/dri/card1` and `/dev/dri/renderD128`.
 
 Breaking it down by token:
 
@@ -106,9 +104,9 @@ Breaking it down by token:
 - `/dev/dri/card1` - the path on the host to the device being passed through. Proxmox will bind-mount this into the container.
 - `gid=44` - the group ID that will own the device node inside the container. This is what makes it accessible to the video group (GID 44) inside the LXC, so the plex user can actually use it.
 
-One important thing to understand is the gid here is applied to the device node as seen from **_inside_** the container. That's why it needs to match the GID of the video/render group inside the LXC specifically, not necessarily the host's GID. Often they are the same, though sometimes they are not, which was my problem.
+One important thing to understand is the GID here is applied to the device node as seen from **_inside_** the container. That's why it needs to match the GID of the video/render group inside the LXC specifically, not necessarily the host's GID. Often they are the same, though sometimes they are not, _which was my problem_.
 
-You'll need to start the LXC and then run the following command to find the correct GID.
+Once all that is configured and saved. I can start the LXC and run the following command inside the container to find the correct GID.
 
 ```bash
 getent group video render
@@ -117,12 +115,11 @@ getent group video render
 For my container, I got back the following.
 
 ```bash
-plex:~$ getent group video render
 video:x:44:plex
 render:x:105:plex
 ```
 
-This is where the GIDs in my configuration are derived, `44` and `105` respectively.
+This is where the GIDs in my configuration are derived, `44` and `105` respectively. If they don't match, shut down the container and go back to the host lxc configuration and update them.
 
 > [!IMPORTANT]
 > the device GID refers to the device node as seen from **_inside_** the container.
